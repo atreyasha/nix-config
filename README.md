@@ -1,3 +1,3 @@
-# nixos-config
+# nix-config
 
 Much works underway :snail:
