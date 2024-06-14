@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./virtualbox.nix
   ];
+
   # configure our nixpkgs
   nixpkgs = {
     config = {
@@ -28,6 +29,7 @@
       # workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
     };
+
     # opinionated: disable channels
     channel.enable = false;
 
