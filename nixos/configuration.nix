@@ -67,7 +67,7 @@
   services.tlp = {
     enable = true;
     settings = {
-      DEVICES_TO_DISABLE_ON_STARTUP="bluetooth nfc wifi wwan"
+      DEVICES_TO_DISABLE_ON_STARTUP="bluetooth nfc wifi wwan";
     };
   };
 
