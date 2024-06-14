@@ -22,6 +22,8 @@
       flake-registry = "";
       # workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+      # always optimize store
+      auto-optimise-store = true;
     };
 
     # opinionated: disable channels
@@ -30,6 +32,13 @@
     # opinionated: make flake registry and nix path match flake inputs
     registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+
+    # define garbage collection
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
   };
 
   # configure bootloader
@@ -39,14 +48,6 @@
     useOSProber = true;
     device = "nodev";
   };
-
-  # nix store and GC related configurations
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-  nix.settings.auto-optimise-store = true;
 
   # define default locale
   i18n.defaultLocale = "en_US.UTF-8";
