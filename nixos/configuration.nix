@@ -1,10 +1,4 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ...}: {
   # import necessary additional files
   imports = [
     ./hardware-configuration.nix
@@ -54,26 +48,50 @@
   };
   nix.settings.auto-optimise-store = true;
 
-  # TODO: port other aspects directly from monix repo
-  # TODO: fix up NTP servers with google
+  # define default locale
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  # configure xserver
+  # enable network manager and add hostname
+  networking.hostName = "monix";
+  networking.networkmanager.enable = true;
+
+  # time-related settings
+  services.automatic-timezoned.enable = true;
+  services.timesyncd = {
+    enable = true;
+    servers = [ "time.google.com" ];
+  };
+
+  # enable power management with TLP
+  services.tlp = {
+    enable = true;
+    settings = {
+      DEVICES_TO_DISABLE_ON_STARTUP="bluetooth nfc wifi wwan"
+    };
+  };
+
+  # configure console and xserver
+  console.keyMap = "us";
   services.xserver = {
     enable = true;
     displayManager.startx.enable = true;
+    xkb.layout = "us,de";
   };
 
-  # configure hostname
-  networking.hostName = "monix";
+  # enable docker
+  virtualisation.docker.enable = true;
 
   # configure system-wide users
   users.users = {
     shankar = {
       initialPassword = "password";
       isNormalUser = true;
-      extraGroups = ["wheel"];
+      extraGroups = [ "wheel" "video" "docker" ];
     };
   };
+
+  # install system-level packages
+  environment.systemPackages = with pkgs; [ brightnessctl ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
