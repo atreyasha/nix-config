@@ -1,8 +1,9 @@
-{ inputs, lib, config, pkgs, ...}: {
+{ inputs, lib, config, pkgs, ...}:
+
+{
   # import necessary additional files
   imports = [
     ./hardware-configuration.nix
-    ./virtualbox.nix
   ];
 
   # configure our nixpkgs
@@ -17,11 +18,15 @@
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
     settings = {
+      # we need this to enable flakes
       experimental-features = "nix-command flakes";
+
       # opinionated: disable global registry
       flake-registry = "";
+
       # workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
+
       # always optimize store
       auto-optimise-store = true;
     };
@@ -41,13 +46,14 @@
     };
   };
 
-  # configure bootloader
+  # configure bootloader and EFI
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
     useOSProber = true;
     device = "nodev";
   };
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # define default locale
   i18n.defaultLocale = "en_US.UTF-8";
@@ -87,13 +93,27 @@
     shankar = {
       initialPassword = "password";
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" "docker" ];
+      extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
     };
   };
 
   # install system-level packages
-  environment.systemPackages = with pkgs; [ brightnessctl ];
+  environment.systemPackages = with pkgs; [ brightnessctl vim git ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
+
+  # NOTE: the following settings are used to make VirtualBox work
+  # enable guest additions
+  virtualisation.virtualbox.guest.enable = true;
+
+  # FIXME: UUID detection is currently broken
+  boot.loader.grub.fsIdentifier = "provided";
+
+  # add some more video drivers to give X11 a shot at working in
+  # VMware and QEMU.
+  services.xserver.videoDrivers = lib.mkOverride 40 [ "virtualbox" "vmware" "cirrus" "vesa" "modesetting" ];
+
+  # disable power management
+  powerManagement.enable = false;
 }
