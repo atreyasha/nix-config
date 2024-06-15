@@ -41,8 +41,8 @@
 
   # Set your username
   home = {
-    username = ${user};
-    homeDirectory = "/home/" + ${user};
+    username = "${user}";
+    homeDirectory = "/home/${user}";
   };
 
   # Add stuff for your user as you see fit:
