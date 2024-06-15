@@ -118,7 +118,7 @@
 
   # NOTE: here we declare out home manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = { inherit inputs outputs user; };
     users = {
       ${user} = import ../home-manager/home.nix;
     };
