@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, user ...}:
+{ inputs, lib, config, pkgs, user, ...}:
 
 {
   # import necessary additional files
