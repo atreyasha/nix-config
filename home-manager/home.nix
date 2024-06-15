@@ -5,6 +5,7 @@
   lib,
   config,
   pkgs,
+  user,
   ...
 }: {
   # You can import other home-manager modules here
@@ -38,10 +39,10 @@
     };
   };
 
-  # TODO: Set your username
+  # Set your username
   home = {
-    username = "your-username";
-    homeDirectory = "/home/your-username";
+    username = ${user};
+    homeDirectory = "/home/" + ${user};
   };
 
   # Add stuff for your user as you see fit:

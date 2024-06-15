@@ -3,6 +3,7 @@
 {
   # import necessary additional files
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
   ];
 
@@ -114,4 +115,12 @@
 
   # disable power management
   powerManagement.enable = false;
+
+  # NOTE: here we declare out home manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      ${user} = import ../home-manager/home.nix;
+    };
+  };
 }
