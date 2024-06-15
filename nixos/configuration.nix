@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ...}:
+{ inputs, lib, config, pkgs, user ...}:
 
 {
   # import necessary additional files
@@ -89,12 +89,10 @@
   virtualisation.docker.enable = true;
 
   # configure system-wide users
-  users.users = {
-    shankar = {
-      initialPassword = "password";
-      isNormalUser = true;
-      extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
-    };
+  users.users.${user} = {
+    initialPassword = "password";
+    isNormalUser = true;
+    extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
   };
 
   # install system-level packages

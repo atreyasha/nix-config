@@ -17,17 +17,8 @@
     # NixOS configuration entrypoint
     nixosConfigurations = {
       monix = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs; user = "shankar" };
         modules = [./nixos/configuration.nix];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    homeConfigurations = {
-      "shankar@monix" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/home.nix];
       };
     };
   };
