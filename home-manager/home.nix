@@ -2,7 +2,7 @@
 
 {
   # modular imports
-  imports = [];
+  imports = [ ./alacritty.nix ./git.nix ./systemd.nix ];
 
   # configure nixpkgs as necessary
   nixpkgs = {
@@ -15,9 +15,10 @@
     };
   };
 
+  # TODO: easy porting: alacritty, dircolors, git(d), gnupg, gtk-2.0, gtk-3.0, htop, mimeapps, picom, qt5ct, qt6ct, qutebrowser, readline, rofi, sxiv, tmux, zathura
+  # TODO: harder portinng: X11, autorandr, backgrounds, bash, bin, emacs, i3, neomutt, ranger, systemd, vim, zsh
   # TODO: add i3-cycle pip package
-  # TODO: use autorandr from home manager
-  # TODO: add appropriate home directories or use XDG
+  # TODO: use XDG directories instead of our current one
 
   # set your user's details
   home = {
@@ -26,14 +27,8 @@
     packages = with pkgs; [ emacs ];
   };
 
-  # enable home-manager and git
-  programs = {
-    home-manager.enable = true;
-    git.enable = true;
-  };
-
-  # nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
+  # configure home-manager
+  programs.home-manager.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
