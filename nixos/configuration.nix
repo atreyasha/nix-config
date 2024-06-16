@@ -116,7 +116,7 @@
   # disable power management
   powerManagement.enable = false;
 
-  # NOTE: here we declare out home manager
+  # NOTE: here we declare our home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs user; };
     users = {
