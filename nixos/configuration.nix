@@ -89,6 +89,9 @@
   # enable docker
   virtualisation.docker.enable = true;
 
+  # TODO: add blacklisting for PC speaker if necessary
+  # TODO: add virtualmachine host with machine directory and user groups
+
   # configure system-wide users
   users.users.${user} = {
     initialPassword = "password";

@@ -39,6 +39,9 @@
     };
   };
 
+  # TODO: Add i3-cycle pip package
+  # TODO: Use autorandr from home manager
+  # TODO: Add appropriate home directories
   # Set your username
   home = {
     username = "${user}";
