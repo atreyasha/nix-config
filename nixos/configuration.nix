@@ -47,14 +47,19 @@
     };
   };
 
-  # configure bootloader and EFI
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    useOSProber = true;
-    device = "nodev";
+  # configure modprobe, bootloader and EFI
+  boot = {
+    extraModprobeConfig = "blacklist pcspkr";
+    loader = {
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        useOSProber = true;
+        device = "nodev";
+      };
+    };
   };
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # define default locale
   i18n.defaultLocale = "en_US.UTF-8";
