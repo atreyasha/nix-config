@@ -93,10 +93,14 @@
   # TODO: add virtualmachine host with machine directory and user groups
 
   # configure system-wide users
-  users.users.${user} = {
-    initialPassword = "password";
-    isNormalUser = true;
-    extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
+  programs.zsh.enable = true;
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.${user} = {
+      initialPassword = "password";
+      isNormalUser = true;
+      extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
+    };
   };
 
   # install system-level packages
