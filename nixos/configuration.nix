@@ -114,6 +114,14 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 
+  # NOTE: here we declare our home manager
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs user; };
+    users = {
+      ${user} = import ../home-manager/home.nix;
+    };
+  };
+
   # NOTE: the following settings are used to make VirtualBox work
   # enable guest additions
   virtualisation.virtualbox.guest.enable = true;
@@ -127,12 +135,4 @@
 
   # disable power management
   powerManagement.enable = false;
-
-  # NOTE: here we declare our home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs user; };
-    users = {
-      ${user} = import ../home-manager/home.nix;
-    };
-  };
 }
