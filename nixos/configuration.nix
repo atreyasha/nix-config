@@ -92,10 +92,10 @@
   };
 
   # enable docker
-  virtualisation.docker.enable = true;
-
-  # TODO: add blacklisting for PC speaker if necessary
-  # TODO: add virtualmachine host with machine directory and user groups
+  virtualisation = {
+    virtualbox.host.enable = true;
+    docker.enable = true;
+  };
 
   # configure system-wide users
   programs.zsh.enable = true;
@@ -104,7 +104,7 @@
     users.${user} = {
       initialPassword = "password";
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" "docker" "vboxsf" ];
+      extraGroups = [ "wheel" "video" "docker" "vboxusers" "vboxsf" ];
     };
   };
 
