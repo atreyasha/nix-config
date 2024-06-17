@@ -7,6 +7,7 @@
     ./dircolors.nix
     ./git.nix
     ./systemd.nix
+    ./zathura.nix
   ];
 
   # configure nixpkgs as necessary
