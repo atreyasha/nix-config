@@ -7,6 +7,7 @@
     ./dircolors.nix
     ./git.nix
     ./htop.nix
+    ./readline.nix
     ./systemd.nix
     ./zathura.nix
   ];
