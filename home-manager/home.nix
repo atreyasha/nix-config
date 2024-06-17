@@ -2,7 +2,11 @@
 
 {
   # modular imports
-  imports = [ ./alacritty.nix ./git.nix ./systemd.nix ];
+  imports = [
+    ./alacritty.nix
+    ./git.nix
+    ./systemd.nix
+  ];
 
   # configure nixpkgs as necessary
   nixpkgs = {
@@ -17,6 +21,7 @@
 
   # TODO: easy porting: alacritty, dircolors, git(d), gnupg, gtk-2.0, gtk-3.0, htop, mimeapps, picom, qt5ct, qt6ct, qutebrowser, readline, rofi, sxiv, tmux, zathura
   # TODO: harder portinng: X11, autorandr, backgrounds, bash, bin, emacs, i3, neomutt, ranger, systemd, vim, zsh
+  # TODO: port all monix packages including fonts
   # TODO: add i3-cycle pip package
   # TODO: use XDG directories instead of our current one
 
