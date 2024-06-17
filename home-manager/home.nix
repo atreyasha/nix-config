@@ -6,6 +6,7 @@
     ./alacritty.nix
     ./dircolors.nix
     ./git.nix
+    ./htop.nix
     ./systemd.nix
     ./zathura.nix
   ];
