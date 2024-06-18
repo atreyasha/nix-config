@@ -3,7 +3,7 @@
 {
   programs.ranger = {
     enable = true;
-    extraPackages = with pkgs [
+    extraPackages = with pkgs; [
       ueberzugpp
     ];
     plugins = [
