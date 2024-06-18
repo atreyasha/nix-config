@@ -1,12 +1,18 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   # TODO: add plugin as own nix package
   # TODO: figure out how to import stuff
   programs.ranger = {
     enable = true;
-    extraPackages = [
-      pkgs.ueberzugpp
+    extraPackages = with pkgs [
+      ueberzugpp
+    ];
+    plugins = [
+      {
+        name = "ranger_devicons";
+        src = inputs.ranger-devicons;
+      };
     ];
     extraConfig = ''
       set preview_images true

@@ -2,8 +2,14 @@
   description = "NixOS configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/master";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ranger-devicons = {
+      url = "github:alexanderjeurissen/ranger_devicons/main";
+      flake = false;
+    };
   };
 
   outputs = {
