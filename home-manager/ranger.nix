@@ -10,7 +10,7 @@
       {
         name = "ranger_devicons";
         src = inputs.ranger-devicons;
-      };
+      }
     ];
     extraConfig = ''
       set preview_images true
