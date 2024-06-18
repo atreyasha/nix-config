@@ -1,8 +1,6 @@
 { inputs, pkgs, ... }:
 
 {
-  # TODO: add plugin as own nix package
-  # TODO: figure out how to import stuff
   programs.ranger = {
     enable = true;
     extraPackages = with pkgs [
