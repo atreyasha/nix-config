@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, user, ... }:
+{ config, pkgs, user, ... }:
 
 {
   # modular imports
