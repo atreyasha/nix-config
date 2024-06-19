@@ -7,6 +7,7 @@
     ./dircolors.nix
     ./git.nix
     ./htop.nix
+    ./qutebrowser.nix
     ./ranger.nix
     ./readline.nix
     ./rofi.nix
