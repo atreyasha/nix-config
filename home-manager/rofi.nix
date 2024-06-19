@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   programs.rofi = {
     enable = true;
@@ -12,7 +14,7 @@
       separator-style = "none";
     };
     theme = let
-      inherit (config.lib.formats.rasi) mkLiteral;
+      inherit (lib.formats.rasi) mkLiteral;
     in {
       "@theme" = "gruvbox-dark-hard";
       listview = {
