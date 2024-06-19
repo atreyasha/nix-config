@@ -18,7 +18,7 @@
         columns = 9;
       };
       window = {
-        width = 100%;
+        width = "100%";
       };
     };
   };
