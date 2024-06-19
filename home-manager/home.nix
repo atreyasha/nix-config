@@ -9,6 +9,7 @@
     ./htop.nix
     ./ranger.nix
     ./readline.nix
+    ./rofi.nix
     ./systemd.nix
     ./zathura.nix
   ];
