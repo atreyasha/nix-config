@@ -37,6 +37,33 @@ in
           style = "Regular";
         };
       };
+
+      keyboard.bindings = [
+        {
+          action = "ScrollPageUp";
+          key = "PageUp";
+          mode = "~Alt";
+          mods = "Control|Shift";
+        }
+        {
+          action = "ScrollPageDown";
+          key = "PageDown";
+          mode = "~Alt";
+          mods = "Control|Shift";
+        }
+        {
+          action = "ScrollLineUp";
+          key = "Up";
+          mode = "~Alt";
+          mods = "Control|Shift";
+        }
+        {
+          action = "ScrollLineDown";
+          key = "Down";
+          mode = "~Alt";
+          mods = "Control|Shift";
+        }
+      ];
     };
   };
 }
