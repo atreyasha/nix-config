@@ -12,6 +12,7 @@
     ./readline.nix
     ./rofi.nix
     ./systemd.nix
+    ./tmux.nix
     ./zathura.nix
   ];
 
