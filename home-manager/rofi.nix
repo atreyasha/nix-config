@@ -1,7 +1,6 @@
 {
   programs.rofi = {
     enable = true;
-    theme = "gruvbox-dark-hard";
     extraConfig = {
       modi = "drun";
       font = "mono 11";
@@ -12,5 +11,17 @@
       line-padding = 1;
       separator-style = "none";
     };
+    theme = ''
+      @theme "gruvbox-dark-hard"
+
+      listview {
+              lines: 20;
+              columns: 9;
+      }
+
+      window {
+              width: 100%;
+      }
+    '';
   };
 }
