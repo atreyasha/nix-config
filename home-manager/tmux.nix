@@ -1,3 +1,5 @@
+{ options, ... }:
+
 {
   programs.tmux = {
     enable = true;
@@ -25,7 +27,7 @@
       bind b break-pane
       bind k confirm kill-window
       bind q confirm kill-session
-      bind r source-file ${programs.xdg.configHome}/tmux/tmux.conf
+      bind r source-file ${options.programs.xdg.configHome}/tmux/tmux.conf
       bind t select-layout tiled
       bind x kill-pane
       bind -n S-Left previous-window
