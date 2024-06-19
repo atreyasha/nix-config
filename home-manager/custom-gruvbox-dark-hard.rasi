@@ -1,0 +1,10 @@
+@theme "gruvbox-dark-hard"
+
+listview {
+  lines: 20;
+  columns: 9;
+}
+
+window {
+  width: 100%;
+}

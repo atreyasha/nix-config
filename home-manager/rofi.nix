@@ -11,17 +11,6 @@
       line-padding = 1;
       separator-style = "none";
     };
-    theme = ''
-      @theme "gruvbox-dark-hard"
-
-      listview {
-              lines: 20;
-              columns: 9;
-      }
-
-      window {
-              width: 100%;
-      }
-    '';
+    theme = ./custom-gruvbox-dark-hard.rasi;
   };
 }
