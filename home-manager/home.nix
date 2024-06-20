@@ -6,6 +6,7 @@
     ./alacritty.nix
     ./dircolors.nix
     ./git.nix
+    ./gpg.nix
     ./htop.nix
     ./qutebrowser.nix
     ./ranger.nix
