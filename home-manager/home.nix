@@ -37,7 +37,7 @@
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
-    packages = with pkgs; [ emacs ];
+    packages = with pkgs; [ ];
   };
 
   # configure home-manager
