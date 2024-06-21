@@ -20,9 +20,9 @@
       geometry=$(identify -format '%wx%h' "$1[0]")
 
       tags=$(exiv2 -q pr -pi "$1" | awk '$1~"Keywords" { printf("%s,", $4); }')
-      tags=${tags%,}
+      tags=''${tags%,}
 
-      echo "${filesize}${s}${geometry}${tags:+$s}${tags}${s}${filename}"
+      echo "''${filesize}''${s}''${geometry}''${tags:+$s}''${tags}''${s}''${filename}"
       '';
     executable = true;
   };
