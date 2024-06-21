@@ -31,11 +31,12 @@
     };
   };
 
-  # TODO: easy porting: alacritty, dircolors, git(d), gnupg, gtk-2.0, gtk-3.0, htop, mimeapps, picom, qt5ct, qt6ct, qutebrowser, readline, rofi, sxiv, tmux, zathura
-  # TODO: harder portinng: X11, autorandr, backgrounds, bash, bin, emacs, i3, neomutt, ranger, systemd, vim, zsh
-  # TODO: port all monix packages including fonts
-  # TODO: add i3-cycle pip package
-  # TODO: use XDG directories instead of our current one
+  # TODO: vim, zsh (enable support in other files)
+  # TODO: X11 and i3 (needs system level, remove picom as we have service), autorandr, mimeapps, bin, neomutt + systemd
+  # TODO: fontconfig and gtk and qt, emacs
+  # TODO: add i3-cycle package as flake git/tarball dependency with package: https://github.com/nix-community/nix-init
+  # TODO: use XDG directories with capital names instead of current ones
+  # TODO: port all packages including fonts and fontConfig, but take note difference for fonts in system configuration vs. home-manager: https://discourse.nixos.org/t/home-manager-nerdfonts/11226, https://nixos.asia/en/tips/hm-fonts
 
   # set your user's details
   home = {
