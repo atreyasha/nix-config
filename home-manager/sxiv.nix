@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ sxiv ];
+  home.packages = with pkgs; [ sxiv exiv2 ];
   xdg.configFile."sxiv/exec/image-info" = {
     text = ''
       #!/usr/bin/env bash
