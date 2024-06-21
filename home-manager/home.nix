@@ -4,6 +4,7 @@
   # modular imports
   imports = [
     ./alacritty.nix
+    ./backgrounds.nix
     ./dircolors.nix
     ./git.nix
     ./gpg.nix
