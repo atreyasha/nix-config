@@ -13,6 +13,7 @@
     ./ranger.nix
     ./readline.nix
     ./rofi.nix
+    ./sxiv.nix
     ./systemd.nix
     ./tmux.nix
     ./zathura.nix
