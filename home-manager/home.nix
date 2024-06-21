@@ -8,6 +8,7 @@
     ./git.nix
     ./gpg.nix
     ./htop.nix
+    ./picom.nix
     ./qutebrowser.nix
     ./ranger.nix
     ./readline.nix
