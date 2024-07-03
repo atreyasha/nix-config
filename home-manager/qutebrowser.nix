@@ -14,7 +14,7 @@ in
       url.start_pages = [ "${defaultPage}" ];
     };
     searchEngines = {
-      DEFAULT = "https://www.google.com/search?q={}";
+      DEFAULT = "${defaultPage}/search?q={}";
     };
   };
 }
