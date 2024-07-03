@@ -13,6 +13,12 @@ in
       url.default_page = "${defaultPage}";
       url.start_pages = [ "${defaultPage}" ];
     };
+    keyBindings = {
+      normal = {
+        "gK" = "tab-move +";
+        "gJ" = "tab-move -";
+      };
+    };
     searchEngines = {
       DEFAULT = "${defaultPage}/search?q={}";
     };
