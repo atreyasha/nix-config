@@ -22,7 +22,7 @@
     # NixOS configuration entrypoint
     nixosConfigurations = {
       monix = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; user = "shankar"; };
+        specialArgs = { inherit inputs outputs; buildVars = { user = "shankar"; } ; };
         modules = [ ./nixos/configuration.nix ];
       };
     };

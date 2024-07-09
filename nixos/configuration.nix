@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, user, ...}:
+{ inputs, outputs, lib, config, pkgs, buildVars, ...}:
 
 {
   # import necessary additional files
@@ -101,7 +101,7 @@
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users.${user} = {
+    users.${buildVars.user} = {
       initialPassword = "password";
       isNormalUser = true;
       extraGroups = [ "wheel" "video" "docker" "vboxusers" "vboxsf" ];

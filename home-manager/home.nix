@@ -1,4 +1,4 @@
-{ config, pkgs, user, ... }:
+{ config, pkgs, buildVars, ... }:
 
 {
   # modular imports
@@ -40,7 +40,7 @@
   # TODO: port all packages including fonts and fontConfig, but take note difference for fonts in system configuration vs. home-manager: https://discourse.nixos.org/t/home-manager-nerdfonts/11226, https://nixos.asia/en/tips/hm-fonts
 
   # set your user's details
-  home = {
+  home = with buildVars; {
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = with pkgs; [];
