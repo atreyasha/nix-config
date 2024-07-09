@@ -43,7 +43,6 @@
   home = {
     username = "${buildVars.user}";
     homeDirectory = "/home/${buildVars.user}";
-    packages = with pkgs; [];
   };
 
   # configure home-manager
