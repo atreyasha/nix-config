@@ -17,7 +17,7 @@
     ./sxiv.nix
     ./systemd.nix
     ./tmux.nix
-    ./vim/vim.nix
+    ./vim
     ./zathura.nix
   ];
 
