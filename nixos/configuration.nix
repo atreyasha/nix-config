@@ -116,9 +116,9 @@
 
   # NOTE: here we declare our home manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs user; };
+    extraSpecialArgs = { inherit inputs outputs buildVars; };
     users = {
-      ${user} = import ../home-manager/home.nix;
+      ${buildVars.user} = import ../home-manager/home.nix;
     };
   };
 
