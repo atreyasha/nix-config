@@ -1,3 +1,5 @@
+{ pkgs, ... }
+
 let
   alacrittyFont = "BitstromWera Nerd Font Mono";
 in
