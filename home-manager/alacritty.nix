@@ -69,9 +69,9 @@ in
   };
 
   # update session variable
-  home.sessionVariables = [
+  home.sessionVariables = {
     TERMINAL = "alacritty";
-  ];
+  };
 
   # add necessary fonts
   home.packages = with pkgs; [

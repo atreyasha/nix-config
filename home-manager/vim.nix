@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.sessionVariables = [
-    EDITOR = "vim";
-  ];
+  # core program
   programs.vim = {
     enable = true;
     defaultEditor = true;
@@ -382,5 +380,10 @@
       " enable persistent undo
       set undofile
     '';
+  };
+
+  # make vim default editor
+  home.sessionVariables = {
+    EDITOR = "vim";
   };
 }
