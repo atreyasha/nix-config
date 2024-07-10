@@ -6,6 +6,7 @@
     ./alacritty.nix
     ./backgrounds
     ./dircolors.nix
+    ./fonts.nix
     ./git.nix
     ./gpg.nix
     ./htop.nix
@@ -44,6 +45,9 @@
     username = "${buildVars.user}";
     homeDirectory = "/home/${buildVars.user}";
     packages = with pkgs; [ ruby ];
+    sessionPath = [
+      "$HOME/bin"
+    ];
   };
 
   # configure home-manager

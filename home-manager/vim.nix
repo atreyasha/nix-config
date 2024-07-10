@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  home.sessionVariables = [
+    EDITOR = "vim";
+  ];
   programs.vim = {
     enable = true;
     defaultEditor = true;

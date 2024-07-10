@@ -2,6 +2,7 @@ let
   alacrittyFont = "BitstromWera Nerd Font Mono";
 in
 {
+  # core program
   programs.alacritty = {
     enable = true;
     settings = {
@@ -66,4 +67,14 @@ in
       ];
     };
   };
+
+  # update session variable
+  home.sessionVariables = [
+    TERMINAL = "alacritty";
+  ];
+
+  # add necessary fonts
+  home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "BitstromWera Nerd Font" ]; })
+  ];
 }
