@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  alacrittyFont = "BitstreamVeraSansMono Nerd Font";
+  alacrittyFont = "BitstromWera Nerd Font Mono";
 in
 {
   # core program
