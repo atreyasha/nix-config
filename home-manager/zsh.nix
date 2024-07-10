@@ -1,3 +1,5 @@
+{ pkgs, ... };
+
 {
   programs.zsh = {
     enable = true;
@@ -25,5 +27,6 @@
         clear
       fi
     '';
+    plugins = with pkgs; [ zsh-system-clipboard ];
   };
 }
