@@ -382,6 +382,9 @@
     '';
   };
 
+  # additional packages
+  home.packages = with pkgs; [ xsel ];
+
   # make vim default editor
   home.sessionVariables = {
     EDITOR = "vim";
