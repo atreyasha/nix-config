@@ -27,7 +27,11 @@
         clear
       fi
     '';
+    plugins = [
+      {
+        name = "zsh-system-clipboard";
+        src = pkgs.zsh-system-clipboard.src;
+      }
+    ];
   };
-
-  home.packages = with pkgs; [ zsh-system-clipboard ];
 }
