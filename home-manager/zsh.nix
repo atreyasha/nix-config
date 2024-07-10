@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # core program
   programs.zsh = {
     enable = true;
     history = {
@@ -34,4 +35,7 @@
       }
     ];
   };
+
+  # add more packages
+  home.packages = with pkgs; [ zsh-system-clipboard ];
 }
