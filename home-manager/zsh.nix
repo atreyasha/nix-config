@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-
 {
-  # core program
   programs.zsh = {
     enable = true;
     history = {
@@ -31,11 +28,8 @@
     plugins = [
       {
         name = "zsh-system-clipboard";
-        src = pkgs.zsh-system-clipboard.src;
+        src = inputs.zsh-system-clipboard;
       }
     ];
   };
-
-  # add more packages
-  home.packages = with pkgs; [ zsh-system-clipboard ];
 }
