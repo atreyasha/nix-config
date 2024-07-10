@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  alacrittyFont = "BitstromWera Nerd Font Mono";
+  alacrittyFont = "BitstreamVeraSansMono Nerd Font";
 in
 {
   # core program
@@ -77,6 +77,6 @@ in
 
   # add necessary fonts
   home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "BitstromWera Nerd Font" ]; })
+    (nerdfonts.override { fonts = [ "BitstreamVeraSansMono" ]; })
   ];
 }
