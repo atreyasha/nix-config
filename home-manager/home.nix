@@ -20,6 +20,7 @@
     ./tmux.nix
     ./vim.nix
     ./zathura.nix
+    ./zsh.nix
   ];
 
   # configure nixpkgs as necessary
