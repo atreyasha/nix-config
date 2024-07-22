@@ -48,7 +48,6 @@
       },
       "original": {
         "owner": "alexanderjeurissen",
-        "ref": "main",
         "repo": "ranger_devicons",
         "type": "github"
       }
@@ -57,7 +56,24 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "ranger-devicons": "ranger-devicons"
+        "ranger-devicons": "ranger-devicons",
+        "zsh-system-clipboard": "zsh-system-clipboard"
+      }
+    },
+    "zsh-system-clipboard": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714563942,
+        "narHash": "sha256-dhvvvgfFFMBNQvZvfsidrPZiJmmhsMloaOTGfTc5PwE=",
+        "owner": "kutsan",
+        "repo": "zsh-system-clipboard",
+        "rev": "2d94918c7fbba175a9b47845db8c664a04cffeaa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kutsan",
+        "repo": "zsh-system-clipboard",
+        "type": "github"
       }
     }
   },
