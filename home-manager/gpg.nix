@@ -3,7 +3,6 @@
 {
   programs.gpg = {
     enable = true;
-    # TODO: fill this out
     publicKeys = [];
   };
 
@@ -16,7 +15,6 @@
      defaultCacheTtl = 86400;
      defaultCacheTtlSsh = 86400;
      pinentryPackage = pkgs.pinentry-gnome3;
-     # TODO: fill this out
      sshKeys = [];
    };
 }
