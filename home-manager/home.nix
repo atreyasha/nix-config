@@ -38,7 +38,6 @@
   home = {
     username = "${buildVars.user}";
     homeDirectory = "/home/${buildVars.user}";
-    packages = with pkgs; [ ruby ];
     sessionPath = [
       "$HOME/bin"
     ];
