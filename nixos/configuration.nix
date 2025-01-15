@@ -109,7 +109,7 @@
   };
 
   # install system-level packages
-  environment.systemPackages = with pkgs; [ brightnessctl vim git ];
+  environment.systemPackages = with pkgs; [ vim git ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
