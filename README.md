@@ -6,6 +6,4 @@
 
 ## Override
 
-Instead of executing `nixos-install` and creating own configuraton:
-
-Follow very similar instruction as here: https://github.com/hlissner/dotfiles
+Instead of executing `nixos-install` and creating own configuraton, clone this repo and install using similar commands: https://github.com/hlissner/dotfiles/blob/master/install.zsh
