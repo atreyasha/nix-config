@@ -38,7 +38,7 @@
   home = {
     username = "${buildVars.user}";
     homeDirectory = "/home/${buildVars.user}";
-    packages = with pkgs [ brightnessctl ruby python3Full ];
+    packages = with pkgs; [ brightnessctl ruby python3Full ];
     sessionPath = [
       "$HOME/bin"
     ];
