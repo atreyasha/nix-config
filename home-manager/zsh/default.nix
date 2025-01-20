@@ -1,4 +1,4 @@
-{ inputs, lib, ... }:
+{ inputs, ... }:
 
 {
   programs.zsh = {
@@ -17,7 +17,10 @@
       grep = "grep --color=auto";
     };
     initExtra = ''
-      ${lib.fileContents ./sample.zsh}
+      ${builtins.readFile ./completions.zsh}
+      ${builtins.readFile ./keybindings.zsh}
+      ${builtins.readFile ./options.zsh}
+      ${builtins.readFile ./prompt.zsh}
     '';
     profileExtra = ''
       # configure low delay for vim mode change

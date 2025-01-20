@@ -21,7 +21,7 @@
     ./vim.nix
     ./xdg.nix
     ./zathura.nix
-    ./zsh.nix
+    ./zsh
   ];
 
   # configure nixpkgs as necessary
