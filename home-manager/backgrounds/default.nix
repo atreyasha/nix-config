@@ -1,6 +1,6 @@
 {
   home.file.".backgrounds" = {
-    source = ./img;
+    source = ./static;
     recursive = true;
   };
 }
