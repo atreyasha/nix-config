@@ -5,7 +5,7 @@
   imports = [
     ./alacritty.nix
     ./backgrounds
-    ./dircolors.nix
+    ./dircolors
     ./fonts.nix
     ./git.nix
     ./gpg.nix
