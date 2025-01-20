@@ -98,6 +98,7 @@
   };
 
   # configure system-wide users
+  programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
     users.${buildVars.user} = {
