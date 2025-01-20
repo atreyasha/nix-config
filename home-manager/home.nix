@@ -19,6 +19,7 @@
     ./systemd.nix
     ./tmux.nix
     ./vim.nix
+    ./xdg.nix
     ./zathura.nix
     ./zsh.nix
   ];
