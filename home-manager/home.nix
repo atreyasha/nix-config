@@ -12,7 +12,7 @@
     ./htop.nix
     ./picom.nix
     ./qutebrowser.nix
-    ./ranger.nix
+    ./ranger
     ./readline.nix
     ./rofi.nix
     ./sxiv.nix
