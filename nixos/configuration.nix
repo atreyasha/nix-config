@@ -98,7 +98,6 @@
   };
 
   # configure system-wide users
-  programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
     users.${buildVars.user} = {
@@ -109,7 +108,10 @@
   };
 
   # install system-level packages
-  environment.systemPackages = with pkgs; [ vim git ];
+  environment = {
+    pathsToLink = [ "/share/zsh" ];
+    systemPackages = with pkgs; [ vim git ];
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

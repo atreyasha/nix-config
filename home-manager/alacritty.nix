@@ -4,6 +4,11 @@ let
   alacrittyFont = "BitstromWera Nerd Font Mono";
 in
 {
+  # update session variable
+  home.sessionVariables = {
+    TERMINAL = "alacritty";
+  };
+
   # core program
   programs.alacritty = {
     enable = true;
