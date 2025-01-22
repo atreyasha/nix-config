@@ -9,6 +9,7 @@
     ./fonts.nix
     ./git.nix
     ./gpg.nix
+    ./i3.nix
     ./htop.nix
     ./picom.nix
     ./qutebrowser.nix
