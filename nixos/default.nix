@@ -92,10 +92,7 @@
   };
 
   # enable docker
-  virtualisation = {
-    virtualbox.host.enable = true;
-    docker.enable = true;
-  };
+  virtualisation.docker.enable = true;
 
   # configure system-wide users
   programs.zsh.enable = true;
