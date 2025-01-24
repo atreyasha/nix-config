@@ -4,7 +4,7 @@
   # import necessary additional files
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./hardware-configuration.nix
+    ./hardware.nix
   ];
 
   # configure our nixpkgs
@@ -121,7 +121,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs buildVars; };
     users = {
-      ${buildVars.user} = import ../home-manager/home.nix;
+      ${buildVars.user} = import ../home-manager;
     };
   };
 
