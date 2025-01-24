@@ -7,31 +7,32 @@
         ]
       },
       "locked": {
-        "lastModified": 1718526747,
-        "narHash": "sha256-sKrD/utGvmtQALvuDj4j0CT3AJXP1idOAq2p+27TpeE=",
+        "lastModified": 1736373539,
+        "narHash": "sha256-dinzAqCjenWDxuy+MqUQq0I4zUSfaCvN9rzuCmgMZJY=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0a7ffb28e5df5844d0e8039c9833d7075cdee792",
+        "rev": "bd65bc3cde04c16755955630b344bc9e35272c56",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "release-24.11",
         "repo": "home-manager",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1718530797,
-        "narHash": "sha256-pup6cYwtgvzDpvpSCFh1TEUjw2zkNpk8iolbKnyFmmU=",
+        "lastModified": 1737404927,
+        "narHash": "sha256-e1WgPJpIYbOuokjgylcsuoEUCB4Jl2rQXa2LUD6XAG8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b60ebf54c15553b393d144357375ea956f89e9a9",
+        "rev": "ae584d90cbd0396a422289ee3efb1f1c9d141dc3",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "nixos-24.11",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -39,11 +40,11 @@
     "ranger-devicons": {
       "flake": false,
       "locked": {
-        "lastModified": 1713564482,
-        "narHash": "sha256-sijO9leDXgnjgcVlh5fKYalhjOupwFMRyH0xh2g/rEQ=",
+        "lastModified": 1736375293,
+        "narHash": "sha256-ck53eG+mGIQ706sUnEHbJ6vY1/LYnRcpq94JXzwnGTQ=",
         "owner": "alexanderjeurissen",
         "repo": "ranger_devicons",
-        "rev": "a8d626485ca83719e1d8d5e32289cd96a097c861",
+        "rev": "f227f212e14996fbb366f945ec3ecaf5dc5f44b0",
         "type": "github"
       },
       "original": {
@@ -63,11 +64,11 @@
     "zsh-system-clipboard": {
       "flake": false,
       "locked": {
-        "lastModified": 1714563942,
-        "narHash": "sha256-dhvvvgfFFMBNQvZvfsidrPZiJmmhsMloaOTGfTc5PwE=",
+        "lastModified": 1721306211,
+        "narHash": "sha256-phsIdvuqcwtAVE1dtQyXcMgNdRMNY03/mIzsvHWPS1Y=",
         "owner": "kutsan",
         "repo": "zsh-system-clipboard",
-        "rev": "2d94918c7fbba175a9b47845db8c664a04cffeaa",
+        "rev": "8b4229000d31e801e6458a3dfa2d60720c110d11",
         "type": "github"
       },
       "original": {
