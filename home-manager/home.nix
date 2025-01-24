@@ -11,7 +11,8 @@
     ./gpg.nix
     ./i3.nix
     ./htop.nix
-    ./picom.nix
+    # TODO: this has been disabled for VM, enable for laptop
+    # ./picom.nix
     ./qutebrowser.nix
     ./ranger
     ./readline.nix
