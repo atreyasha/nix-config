@@ -27,7 +27,7 @@
     nixosConfigurations = {
       monix = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; buildVars = { user = "shankar"; } ; };
-        modules = [ ./nixos/configuration.nix ];
+        modules = [ ./nixos ];
       };
     };
   };
