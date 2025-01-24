@@ -124,8 +124,4 @@
       ${buildVars.user} = import ../home-manager;
     };
   };
-
-  # NOTE: the following settings are used to make VMWare tools work
-  # TODO: this should be removed or modularized at a later stage
-  virtualisation.vmware.guest.enable = true;
 }
