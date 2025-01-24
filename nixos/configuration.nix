@@ -104,7 +104,7 @@
     users.${buildVars.user} = {
       initialPassword = "password";
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" "docker" "vboxusers" "vboxsf" ];
+      extraGroups = [ "wheel" "video" "docker" ];
     };
   };
 
