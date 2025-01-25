@@ -46,7 +46,7 @@
     };
   };
 
-  # configure modprobe, bootloader and EFI
+  # configure bootloader and EFI
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
