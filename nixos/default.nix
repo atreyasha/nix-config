@@ -121,4 +121,7 @@
       ${buildVars.user} = import ../home-manager;
     };
   };
+
+  # TODO: this is temporary for VMWare exploration
+  virtualisation.vmware.guest.enable = true;
 }
