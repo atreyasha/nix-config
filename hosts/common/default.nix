@@ -94,7 +94,7 @@
   # install system-level packages
   environment = {
     pathsToLink = [ "/share/zsh" ];
-    systemPackages = with pkgs; [ vim git ];
+    systemPackages = with pkgs; [ vim git brightnessctl ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
