@@ -4,7 +4,6 @@
   # import necessary additional files
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./hardware.nix
   ];
 
   # configure our nixpkgs
@@ -64,8 +63,7 @@
   # define default locale
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # enable network manager and add hostname
-  networking.hostName = "monix";
+  # enable network manager
   networking.networkmanager.enable = true;
 
   # time-related settings
@@ -113,15 +111,4 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
-
-  # NOTE: here we declare our home manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs buildVars; };
-    users = {
-      ${buildVars.user} = import ../home-manager;
-    };
-  };
-
-  # TODO: this is temporary for VMWare exploration
-  virtualisation.vmware.guest.enable = true;
 }

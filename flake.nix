@@ -25,9 +25,16 @@
   in {
     # NixOS configuration entrypoint
     nixosConfigurations = {
+      # personal laptop
       monix = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs outputs; buildVars = { user = "shankar"; } ; };
-        modules = [ ./nixos ];
+        modules = [ ./hosts/monix ];
+      };
+
+      # VMWare emulating personal laptop
+      becks = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs outputs; buildVars = { user = "shankar"; } ; };
+        modules = [ ./hosts/becks ];
       };
     };
   };
