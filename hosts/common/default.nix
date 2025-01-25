@@ -48,7 +48,6 @@
 
   # configure modprobe, bootloader and EFI
   boot = {
-    extraModprobeConfig = "blacklist pcspkr";
     loader = {
       efi.canTouchEfiVariables = true;
       grub = {
@@ -73,14 +72,6 @@
     servers = [ "time.google.com" ];
   };
 
-  # enable power management with TLP
-  services.tlp = {
-    enable = true;
-    settings = {
-      DEVICES_TO_DISABLE_ON_STARTUP="bluetooth nfc wifi wwan";
-    };
-  };
-
   # configure console and xserver
   console.keyMap = "us";
   services.xserver = {
@@ -88,9 +79,6 @@
     displayManager.startx.enable = true;
     xkb.layout = "us,de";
   };
-
-  # enable docker
-  virtualisation.docker.enable = true;
 
   # configure system-wide users
   programs.zsh.enable = true;
