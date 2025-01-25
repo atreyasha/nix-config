@@ -6,11 +6,10 @@
     ./alacritty
     ./backgrounds
     ./dircolors
-    ./fonts
     ./git
     ./gpg
-    ./i3
     ./htop
+    ./i3
     ./qutebrowser
     ./ranger
     ./readline
@@ -19,7 +18,6 @@
     ./systemd
     ./tmux
     ./vim
-    ./xdg
     ./zathura
     ./zsh
   ];
@@ -47,6 +45,12 @@
 
   # configure home-manager
   programs.home-manager.enable = true;
+
+  # allow font configuration
+  fonts.fontconfig.enable = true;
+
+  # enable sane XDG directories
+  xdg.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
