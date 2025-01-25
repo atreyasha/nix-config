@@ -1,3 +1,5 @@
+{ inputs, outputs, lib, config, pkgs, buildVars, ...}:
+
 {
   # import necessary additional files
   imports = [
