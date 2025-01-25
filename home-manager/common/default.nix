@@ -3,26 +3,24 @@
 {
   # modular imports
   imports = [
-    ./alacritty.nix
+    ./alacritty
     ./backgrounds
     ./dircolors
-    ./fonts.nix
-    ./git.nix
-    ./gpg.nix
-    ./i3.nix
-    ./htop.nix
-    # TODO: this has been disabled for VM, enable for laptop
-    # ./picom.nix
-    ./qutebrowser.nix
+    ./fonts
+    ./git
+    ./gpg
+    ./i3
+    ./htop
+    ./qutebrowser
     ./ranger
-    ./readline.nix
-    ./rofi.nix
-    ./sxiv.nix
-    ./systemd.nix
-    ./tmux.nix
+    ./readline
+    ./rofi
+    ./sxiv
+    ./systemd
+    ./tmux
     ./vim
-    ./xdg.nix
-    ./zathura.nix
+    ./xdg
+    ./zathura
     ./zsh
   ];
 
