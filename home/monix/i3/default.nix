@@ -6,7 +6,7 @@
   xdg.configFile."picom/picom.conf".source = ./picom.conf;
 
   # add bin script
-  home.".local/bin/picom-wrapper" = {
+  home.file.".local/bin/picom-wrapper" = {
     source = ./picom-wrapper;
     executable = true;
   };

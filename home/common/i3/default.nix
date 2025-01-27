@@ -26,11 +26,11 @@
   programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
 
   # setup local shell scripts
-  home.".local/bin/feh-wrapper" = {
+  home.file.".local/bin/feh-wrapper" = {
     source = ./feh-wrapper;
     executable = true;
   };
-  home.".local/bin/i3lock-wrapper" = {
+  home.file.".local/bin/i3lock-wrapper" = {
     source = ./i3lock-wrapper;
     executable = true;
   };
