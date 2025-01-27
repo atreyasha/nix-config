@@ -18,5 +18,8 @@
   home.file.".xinitrc" = {
     source = ./.xinitrc;
     executable = true;
-  }
+  };
+
+  # add zsh configuration lines
+  programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
 }

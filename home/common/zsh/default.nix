@@ -11,6 +11,7 @@
       extended = true;
       ignoreDups = true;
     };
+    completionInit = "autoload -Uz compinit && compinit";
     shellAliases = {
       ls = "ls --color=auto";
       ll = "ls -al";
