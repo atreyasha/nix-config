@@ -91,13 +91,17 @@
     };
   };
 
-  # add pulseaudio for sound
-  hardware.pulseaudio.enable = true;
+  # enable alsa support for pipewirew
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+  };
 
   # install system-level packages
   environment = {
     pathsToLink = [ "/share/zsh" ];
-    systemPackages = with pkgs; [ vim git brightnessctl alsa-utils ];
+    systemPackages = with pkgs; [ vim git brightnessctl ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
