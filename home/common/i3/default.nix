@@ -12,6 +12,7 @@
     unclutter-xfixes
     xorg.xset
     xss-lock
+    i3lock-fancy-rapid
   ];
 
   # set up xinitrc to launch startx
