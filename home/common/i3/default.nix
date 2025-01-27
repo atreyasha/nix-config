@@ -6,5 +6,17 @@
     package = pkgs.i3-gaps;
   };
 
-  home.file.".xinitrc".text = "exec i3";
+  # add packages that we commonly use
+  home.packages = with pkgs; [
+    feh
+    unclutter-xfixes
+    xorg.xset
+    xss-lock
+  ];
+
+  # set up xinitrc to launch startx
+  home.file.".xinitrc" = {
+    source = ./.xinitrc;
+    executable = true;
+  }
 }
