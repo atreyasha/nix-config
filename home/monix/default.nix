@@ -1,6 +1,6 @@
 {
   imports = [
     ../common
-    ./picom
+    ./i3
   ];
 }
