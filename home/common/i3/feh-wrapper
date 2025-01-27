@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# this script sets up a default filled background
+# --no-fehbg ensures that no executable at $HOME/.fehbg is written
+feh --no-fehbg --bg-fill "$HOME/.backgrounds/cosmic_drive.png"

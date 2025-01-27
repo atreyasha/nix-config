@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # standard i3 configuration
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
@@ -23,4 +24,14 @@
 
   # add zsh configuration lines
   programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
+
+  # setup local shell scripts
+  home.".local/bin/feh-wrapper" = {
+    source = ./feh-wrapper;
+    executable = true;
+  };
+  home.".local/bin/i3lock-wrapper" = {
+    source = ./i3lock-wrapper;
+    executable = true;
+  };
 }
