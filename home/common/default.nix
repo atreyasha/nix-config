@@ -39,7 +39,7 @@
     homeDirectory = "/home/${buildVars.user}";
     packages = with pkgs; [ python3Full ];
     sessionPath = [
-      "$HOME/bin"
+      "$HOME/.local/bin"
     ];
   };
 
