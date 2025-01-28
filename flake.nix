@@ -23,17 +23,23 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
+    # define common parameters
+    commonParams = {
+      defaultUser = "shankar";
+      localBin = ".local/bin";
+    };
+
     # NixOS configuration entrypoint
     nixosConfigurations = {
       # personal laptop
       monix = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; buildVars = { defaultUser = "shankar"; } ; };
+        specialArgs = { inherit inputs outputs commonParams; };
         modules = [ ./hosts/monix ];
       };
 
       # VMWare emulating personal laptop
       becks = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; buildVars = { defaultUser = "shankar"; } ; };
+        specialArgs = { inherit inputs outputs commonParams; };
         modules = [ ./hosts/becks ];
       };
     };

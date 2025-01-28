@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, buildVars, ...}:
+{ inputs, outputs, lib, config, pkgs, commonParams, ...}:
 
 {
   # import necessary additional files
@@ -84,7 +84,7 @@
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users."${buildVars.defaultUser}" = {
+    users."${commonParams.defaultUser}" = {
       initialPassword = "password";
       isNormalUser = true;
       extraGroups = [ "wheel" "video" "docker" ];

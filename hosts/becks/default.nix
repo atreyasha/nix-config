@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, buildVars, ...}:
+{ inputs, outputs, lib, config, pkgs, commonParams, ...}:
 
 {
   # import necessary additional files
@@ -12,9 +12,9 @@
 
   # here we declare our home manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs buildVars; };
+    extraSpecialArgs = { inherit inputs outputs commonParams; };
     users = {
-      ${buildVars.defaultUser} = import ../../home/becks;
+      ${commonParams.defaultUser} = import ../../home/becks;
     };
   };
 

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, commonParams, ... }:
 
 {
   # set up standard picom
@@ -6,7 +6,7 @@
   xdg.configFile."picom/picom.conf".source = ./picom.conf;
 
   # add bin script
-  home.file.".local/bin/picom-wrapper" = {
+  home.file."${commonParams.localBin}/picom-wrapper" = {
     source = ./picom-wrapper;
     executable = true;
   };
