@@ -3,23 +3,9 @@
 {
   # modular imports
   imports = [
-    ./alacritty
-    ./backgrounds
-    ./dircolors
-    ./git
-    ./gpg
-    ./htop
-    ./i3
-    ./qutebrowser
-    ./ranger
-    ./readline
-    ./rofi
-    ./sxiv
-    ./systemd
-    ./tmux
-    ./vim
-    ./zathura
-    ./zsh
+    ./console
+    ./graphical
+    ./services
   ];
 
   # configure nixpkgs as necessary

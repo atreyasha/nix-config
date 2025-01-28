@@ -1,6 +1,6 @@
 {
   imports = [
     ../common
-    ./i3
+    ./graphical
   ];
 }
