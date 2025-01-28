@@ -7,4 +7,4 @@ if pgrep -u "$USER" -x picom &>/dev/null; then
 fi
 
 # launch picom
-picom -b --config "$HOME/.config/picom/picom.conf"
+picom -b
