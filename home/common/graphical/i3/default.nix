@@ -23,7 +23,7 @@ in
   ];
 
   # set up desktop backgrounds
-  xdg.dataHome."backgrounds" = {
+  xdg.dataFile."backgrounds" = {
     source = ./backgrounds;
     recursive = true;
   };
