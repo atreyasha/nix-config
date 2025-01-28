@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  backgroundsDir = ".backgrounds";
+in
 {
   # standard i3 configuration
   xsession.windowManager.i3 = {
@@ -18,6 +21,12 @@
     scrot
     i3-balance-workspace
   ];
+
+  # set up desktop backgrounds
+  home.file."${backgroundsDir}" = {
+    source = ./backgrounds;
+    recursive = true;
+  };
 
   # set up xinitrc to launch startx
   home.file.".xinitrc" = {
