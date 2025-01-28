@@ -84,7 +84,7 @@
   programs.zsh.enable = true;
   users = {
     defaultUserShell = pkgs.zsh;
-    users.${buildVars.user} = {
+    users."${buildVars.user}" = {
       initialPassword = "password";
       isNormalUser = true;
       extraGroups = [ "wheel" "video" "docker" ];
