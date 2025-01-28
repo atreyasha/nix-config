@@ -1,7 +1,7 @@
 { config, pkgs, commonParams, ... }:
 
 let
-  backgroundsDir = config.xdg.dataHome."backgrounds";
+  backgroundsDir = "backgrounds";
 in
 {
   # standard i3 configuration
@@ -23,7 +23,7 @@ in
   ];
 
   # set up desktop backgrounds
-  "${backgroundsDir}" = {
+  xdg.dataHome."backgrounds" = {
     source = ./backgrounds;
     recursive = true;
   };
