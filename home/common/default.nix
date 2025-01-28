@@ -1,5 +1,8 @@
 { config, pkgs, buildVars, ... }:
 
+let
+  buildVars.localBin = ".local/bin";
+in
 {
   # modular imports
   imports = [
@@ -25,7 +28,7 @@
     homeDirectory = "/home/${buildVars.defaultUser}";
     packages = with pkgs; [ python3Full ];
     sessionPath = [
-      "$HOME/.local/bin"
+      "$HOME/${buildVars.localBin}"
     ];
   };
 

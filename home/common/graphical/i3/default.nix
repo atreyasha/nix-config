@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, buildVars, ... }:
 
 let
   backgroundsDir = ".backgrounds";
@@ -38,11 +38,11 @@ in
   programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
 
   # setup local shell scripts
-  home.file.".local/bin/feh-wrapper" = {
+  home.file."${buildVars.localBin}/feh-wrapper" = {
     source = ./feh-wrapper;
     executable = true;
   };
-  home.file.".local/bin/i3lock-wrapper" = {
+  home.file."${buildVars.localBin}/i3lock-wrapper" = {
     source = ./i3lock-wrapper;
     executable = true;
   };
