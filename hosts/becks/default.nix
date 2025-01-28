@@ -14,7 +14,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs buildVars; };
     users = {
-      ${buildVars.user} = import ../../home/becks;
+      ${buildVars.defaultUser} = import ../../home/becks;
     };
   };
 

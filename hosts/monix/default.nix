@@ -28,7 +28,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs buildVars; };
     users = {
-      ${buildVars.user} = import ../../home/monix;
+      ${buildVars.defaultUser} = import ../../home/monix;
     };
   };
 }

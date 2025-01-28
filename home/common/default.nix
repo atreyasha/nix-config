@@ -21,8 +21,8 @@
 
   # set your user's details
   home = {
-    username = "${buildVars.user}";
-    homeDirectory = "/home/${buildVars.user}";
+    username = "${buildVars.defaultUser}";
+    homeDirectory = "/home/${buildVars.defaultUser}";
     packages = with pkgs; [ python3Full ];
     sessionPath = [
       "$HOME/.local/bin"
