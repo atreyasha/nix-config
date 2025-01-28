@@ -11,7 +11,7 @@
       extended = true;
       ignoreDups = true;
     };
-    completionInit = "autoload -Uz compinit && compinit";
+    historySubstringSearch.enable = true;
     shellAliases = {
       ls = "ls --color=auto";
       ll = "ls -al";
@@ -26,6 +26,9 @@
     profileExtra = ''
       # configure low delay for vim mode change
       export KEYTIMEOUT="1"
+
+      # configure prefix-only seach results for history substrings
+      export HISTORY_SUBSTRING_SEARCH_PREFIXED="1"
     '';
     logoutExtra = ''
       # conditionally kill gpg-agent and clear console
