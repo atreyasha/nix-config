@@ -45,7 +45,7 @@ in
       # this script sets up a default filled background
       # --no-fehbg ensures that no executable at $HOME/.fehbg is written
       feh --no-fehbg --bg-fill "${config.xdg.dataHome}/${backgroundsDir}/cosmic_drive.png"
-    ''
+    '';
     executable = true;
   };
   home.file."${commonParams.localBin}/i3lock-wrapper" = {
