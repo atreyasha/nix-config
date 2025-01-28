@@ -22,13 +22,13 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-  in {
+
     # define common parameters
     commonParams = {
       defaultUser = "shankar";
       localBin = ".local/bin";
     };
-
+  in {
     # NixOS configuration entrypoint
     nixosConfigurations = {
       # personal laptop
