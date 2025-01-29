@@ -27,8 +27,9 @@
       # configure low delay for vim mode change
       export KEYTIMEOUT="1"
 
-      # configure prefix-only seach results for history substrings
+      # configure prefix-only search results that are unique
       export HISTORY_SUBSTRING_SEARCH_PREFIXED="1"
+      export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE="1"
     '';
     logoutExtra = ''
       # conditionally kill gpg-agent and clear console
