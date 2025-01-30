@@ -61,6 +61,7 @@ in
     i3lock-fancy-rapid
     scrot
     i3-balance-workspace
+    dejavu_fonts
   ];
 
   # set up desktop backgrounds
@@ -93,9 +94,4 @@ in
     source = ./i3lock-wrapper;
     executable = true;
   };
-
-  # add necessary fonts
-  home.packages = with pkgs; [
-    dejavu_fonts
-  ];
 }
