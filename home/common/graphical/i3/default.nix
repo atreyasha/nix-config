@@ -259,7 +259,7 @@ in
           {
             block = "keyboard_layout";
             driver = "xkbswitch";
-            format = " ''\uf11c $layout ";
+            format = " \\uf11c $layout ";
             signal = 9;
           }
         ];
