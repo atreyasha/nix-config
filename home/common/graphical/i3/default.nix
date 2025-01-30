@@ -186,6 +186,11 @@ in
   # add zsh configuration lines
   programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
 
+  # add i3status-rust configuration
+  programs.i3status-rust = {
+    enable = true;
+  };
+
   # setup local shell scripts
   home.file."${commonParams.localBin}/feh-wrapper" = {
     text = ''
