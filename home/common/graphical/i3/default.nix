@@ -136,9 +136,9 @@ in
         "${modifier}+Shift+b" = "exec --no-startup-id i3_balance_workspace";
         "${modifier}+b" = ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
 
-        "${modifier}+Shift+e" = ''mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"''
-        "${modifier}+r" = ''mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"''
-        "${modifier}+Shift+s" = ''mode "screen-capture: s[e]lection, foc[u]sed, [a]ll"''
+        "${modifier}+Shift+e" = ''mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"'';
+        "${modifier}+r" = ''mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"'';
+        "${modifier}+Shift+s" = ''mode "screen-capture: s[e]lection, foc[u]sed, [a]ll"'';
       };
       menu = "";
       modes = {};
