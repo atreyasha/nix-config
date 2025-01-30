@@ -6,9 +6,9 @@ let
   exitMode = "${modifier}+Shift+e";
   adjustMode = "${modifier}+r";
   scrotMode = "${modifier}+Shift+s";
-  exitModeMessage = ''"exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"'';
-  adjustModeMessage = ''"adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"'';
-  scrotModeMessage = ''"screen-capture: s[e]lection, foc[u]sed, [a]ll"'';
+  exitModeMessage = "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff";
+  adjustModeMessage = "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]";
+  scrotModeMessage = "screen-capture: s[e]lection, foc[u]sed, [a]ll";
 in
 {
   # standard i3 configuration
@@ -141,9 +141,9 @@ in
         "${modifier}+Shift+b" = "exec --no-startup-id i3_balance_workspace";
         "${modifier}+b" = ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
 
-        "${exitMode}" = "mode ${exitModeMessage}";
-        "${adjustMode}" = "mode ${adjustModeMessage}";
-        "${scrotMode}" = "mode ${scrotModeMessage}";
+        "${exitMode}" = ''mode "${exitModeMessage}"'';
+        "${adjustMode}" = ''mode "${adjustModeMessage}"'';
+        "${scrotMode}" = ''mode "${scrotModeMessage}"'';
       };
       menu = "";
       modes = {
@@ -173,7 +173,7 @@ in
         "${scrotModeMessage}" = {
           "--release e" = "exec --no-startup-id scrot --line style=dash --select; mode default";
           u = "exec --no-startup-id scrot -u -b; mode default";
-          a = ''mode default; exec --no-startup-id "sleep 0.5 && scrot'';
+          a = ''mode default; exec --no-startup-id "sleep 0.5 && scrot"'';
           Return = "mode default";
           Escape = "mode default";
           "${scrotMode}" = "mode default";
