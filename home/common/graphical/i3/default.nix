@@ -194,6 +194,9 @@ in
     enable = true;
   };
 
+  # enable autorandr
+  programs.autorandr.enable = true;
+
   # setup local shell scripts
   home.file."${commonParams.localBin}/feh-wrapper" = {
     text = ''
