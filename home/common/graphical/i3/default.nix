@@ -259,7 +259,7 @@ in
           {
             block = "keyboard_layout";
             driver = "xkbswitch";
-            format = " \\uf11c $layout ";
+            format = builtins.fromJSON ''" \uf11c $layout "'';  # see workaround: https://github.com/NixOS/nix/issues/10082
             signal = 9;
           }
         ];
