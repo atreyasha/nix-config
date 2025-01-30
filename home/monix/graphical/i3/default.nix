@@ -1,6 +1,14 @@
 { pkgs, commonParams, ... }:
 
 {
+  xsession.windowManager.i3.config.startup = [
+    {
+      command = "picom-wrapper";
+      notification = false;
+      always = true;
+    }
+  ];
+
   # set up standard picom
   home.packages = with pkgs; [ picom ];
   xdg.configFile."picom/picom.conf".source = ./picom.conf;

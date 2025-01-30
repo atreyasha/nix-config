@@ -67,11 +67,6 @@ in
           command = "autorandr --change && feh-wrapper";
           notification = false;
         }
-        {
-          command = "picom-wrapper";
-          notification = false;
-          always = true;
-        }
       ];
       # TODO: think of best way to configure modes i.e. here or file
       # TODO: complete keybindings later and edit defaultWorkspace
