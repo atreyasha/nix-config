@@ -293,6 +293,7 @@ in
     scrot
     i3-balance-workspace
     dejavu_fonts
+    font-awesome_4
   ];
 
   # set up desktop backgrounds
