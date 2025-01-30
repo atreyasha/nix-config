@@ -25,7 +25,7 @@ in
           { class = "^zoom$"; }
           { class = "^Zoom$"; }
         ];
-        "$ws4" = [
+        "$ws5" = [
           { class = "^vmware$"; }
           { class = "^Vmware$"; }
         ];
