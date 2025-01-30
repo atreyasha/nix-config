@@ -35,7 +35,7 @@ in
       {
         statusCommand = "${pkgs.i3status}/bin/i3status";
         position = "top";
-      };
+      }
     ];
   };
 
