@@ -13,6 +13,21 @@ in
         "$ws2" = [
           { class = "^firefox$"; }
           { class = "^Firefox$"; }
+          { class = "^qutebrowser$"; }
+        ];
+        "$ws3" = [
+          { class = "^emacs$"; }
+          { class = "^Emacs$"; }
+        ];
+        "$ws4" = [
+          { class = "^signal$"; }
+          { class = "^Signal$"; }
+          { class = "^zoom$"; }
+          { class = "^Zoom$"; }
+        ];
+        "$ws4" = [
+          { class = "^vmware$"; }
+          { class = "^Vmware$"; }
         ];
       };
     };
