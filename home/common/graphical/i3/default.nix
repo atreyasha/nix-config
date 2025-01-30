@@ -33,7 +33,7 @@ in
       bars = [
         {
           fonts = config.xsession.windowManager.i3.config.fonts;
-          statusCommand = "i3status-rust ${config.xdg.configHome}/i3status-rust/config-default.toml";
+          statusCommand = "i3status-rs config-default.toml";
           position = "top";
         }
       ];
