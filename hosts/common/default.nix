@@ -65,13 +65,13 @@
   # enable network manager
   networking.networkmanager.enable = true;
 
-  # time-related settings with avahi workaround: https://github.com/NixOS/nixpkgs/issues/329522
-  services.automatic-timezoned.enable = true;
-  services.avahi.enable = true;
+  # time-related settings
+  # NOTE: we disable automatic-timezoned: https://github.com/NixOS/nixpkgs/issues/321121
   services.timesyncd = {
     enable = true;
     servers = [ "time.google.com" ];
   };
+  time.timeZone = "Asia/Singapore";
 
   # configure console and xserver
   console.keyMap = "us";
