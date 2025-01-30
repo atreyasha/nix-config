@@ -14,7 +14,6 @@ set $ws10 "10"
 for_window [class="^.*"] border pixel 2.5
 
 # mode for system operations
-bindsym $mod+Shift+e mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"
 mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff" {
   # commands inside mode
   bindsym s mode "default"; exec --no-startup-id systemctl suspend
@@ -29,7 +28,6 @@ mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff" {
 }
 
 # mode for adjusting sizes/gaps
-bindsym $mod+r mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"
 mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]" {
   # adjust window sizes
   bindsym h resize shrink width 10 px or 1 ppt
@@ -48,7 +46,6 @@ mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]" {
 }
 
 # mode for taking screenshots
-bindsym $mod+Shift+s mode "screen-capture: s[e]lection, foc[u]sed, [a]ll"
 mode "screen-capture: s[e]lection, foc[u]sed, [a]ll" {
   # commands inside mode
   bindsym --release e exec --no-startup-id scrot --line style=dash --select; mode "default"
