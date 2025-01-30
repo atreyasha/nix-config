@@ -30,13 +30,13 @@ in
           { class = "^Vmware$"; }
         ];
       };
+      bars = [
+        {
+          statusCommand = "${pkgs.i3status}/bin/i3status";
+          position = "top";
+        }
+      ];
     };
-    bars = [
-      {
-        statusCommand = "${pkgs.i3status}/bin/i3status";
-        position = "top";
-      }
-    ];
   };
 
   # add packages that we commonly use
