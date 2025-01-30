@@ -2,6 +2,13 @@
 
 let
   backgroundsDir = "backgrounds";
+  modifier = config.xsession.windowManager.i3.config.modifier;
+  exitMode = "${modifier}+Shift+e";
+  adjustMode = "${modifier}+r";
+  scrotMode = "${modifier}+Shift+s";
+  exitModeMessage = ''"exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"'';
+  adjustModeMessage = ''"adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"'';
+  scrotModeMessage = ''"screen-capture: s[e]lection, foc[u]sed, [a]ll"'';
 in
 {
   # standard i3 configuration
@@ -53,9 +60,7 @@ in
         smartBorders = "on";
         smartGaps = true;
       };
-      keybindings = let
-        modifier = config.xsession.windowManager.i3.config.modifier;
-      in {
+      keybindings = {
         "${modifier}+Return" = ''exec --no-startup-id "i3-sensible-terminal --working-directory ~"'';
         "${modifier}+Shift+q" = "kill";
         "${modifier}+d" = ''exec --no-startup-id "i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output' | xargs -I{} rofi -monitor {} -show drun"'';
@@ -136,12 +141,44 @@ in
         "${modifier}+Shift+b" = "exec --no-startup-id i3_balance_workspace";
         "${modifier}+b" = ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
 
-        "${modifier}+Shift+e" = ''mode "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff"'';
-        "${modifier}+r" = ''mode "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]"'';
-        "${modifier}+Shift+s" = ''mode "screen-capture: s[e]lection, foc[u]sed, [a]ll"'';
+        "${exitMode}" = "mode ${exitModeMessage}";
+        "${adjustMode}+r" = "mode ${adjustModeMessage}";
+        "${scrotMode}+Shift+s" = "mode ${scrotModeMessage}";
       };
       menu = "";
-      modes = {};
+      modes = {
+        "${exitModeMessage}" = {
+          s = "mode default; exec --no-startup-id systemctl suspend";
+          o = "exec --no-startup-id i3-msg exit";
+          l = "mode default; exec --no-startup-id loginctl lock-session";
+          r = "exec --no-startup-id systemctl reboot";
+          p = "exec --no-startup-id systemctl poweroff";
+          Escape = "mode default";
+          Return = "mode default";
+          "${exitMode}" = "mode default";
+        };
+        "${adjustModeMessage}" = {
+          h = "resize shrink width 10 px or 1 ppt";
+          j = "resize grow height 10 px or 1 ppt";
+          k = "resize shrink height 10 px or 1 ppt";
+          l = "resize grow width 10 px or 1 ppt";
+          "Shift+j" = "gaps inner all plus 2";
+          "Shift+k" = "gaps inner all minus 2";
+          "Shift+l" = "gaps outer all plus 2";
+          "Shift+h" = "gaps outer all minus 2";
+          Return = "mode default";
+          Escape = "mode default";
+          "${adjustMode}" = "mode default";
+        };
+        "screen-capture: s[e]lection, foc[u]sed, [a]ll" = {
+          "--release e" = "exec --no-startup-id scrot --line style=dash --select; mode default";
+          u = "exec --no-startup-id scrot -u -b; mode default";
+          a = ''mode default; exec --no-startup-id "sleep 0.5 && scrot'';
+          Return = "mode default";
+          Escape = "mode default";
+          "${scrotMode}" = "mode default";
+        };
+      };
       modifier = "Mod4";
       startup = [
         {
