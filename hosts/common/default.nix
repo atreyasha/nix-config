@@ -71,7 +71,6 @@
     enable = true;
     servers = [ "time.google.com" ];
   };
-  time.timeZone = "Asia/Singapore";
 
   # configure console and xserver
   console.keyMap = "us";
