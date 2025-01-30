@@ -47,7 +47,39 @@ in
         names = [ "DejaVu Sans" ];
         size = 10.0;
       };
-      # TODO: might require edit based on how we merge keybindings
+      gaps = {
+        inner = 6;
+        outer = 4;
+        smartBorders = "on";
+        smartGaps = true;
+      };
+      modifier = "Mod4";
+      startup = [
+        {
+          command = "i3-msg workspace $ws1; { i3-sensible-terminal --working-directory ~ & }; { i3-sensible-terminal --working-directory ~ & }";
+          notification = false;
+        }
+        {
+          command = "amixer -q sset Master 50% && amixer -q sset Master mute";
+          notification = false;
+        }
+        {
+          command = "autorandr --change && feh-wrapper";
+          notification = false;
+        }
+        {
+          command = "picom-wrapper";
+          notification = false;
+          always = true;
+        }
+      ];
+      # TODO: think of best way to configure modes i.e. here or file
+      # TODO: complete keybindings later and edit defaultWorkspace
+      menu = ''
+        i3-msg -t get_workspaces | \
+        jq '.[] | select(.focused==true).output' | \
+        xargs -I{} rofi -monitor {} -show drun"
+      '';
       defaultWorkspace = "workspace number 1";
     };
   };
