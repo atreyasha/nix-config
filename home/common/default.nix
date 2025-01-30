@@ -36,7 +36,11 @@
   fonts.fontconfig.enable = true;
 
   # enable sane XDG directories
-  xdg.enable = true;
+  xdg = {
+    enable = true;
+    mime.enable = true;
+    mimeApps.enable = true;
+  }
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
