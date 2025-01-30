@@ -8,6 +8,14 @@ in
   xsession.windowManager.i3 = {
     enable = true;
     package = pkgs.i3-gaps;
+    config = {
+      assigns = {
+        "$ws2" = [
+          { class = "^firefox$"; }
+          { class = "^Firefox$"; }
+        ];
+      };
+    };
   };
 
   # add packages that we commonly use
