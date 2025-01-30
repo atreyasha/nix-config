@@ -198,6 +198,17 @@ in
     extraConfig = builtins.readFile ./config;
   };
 
+  # add i3status-rust configuration
+  programs.i3status-rust = {
+    enable = true;
+  };
+
+  # add zsh configuration lines
+  programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
+
+  # enable autorandr
+  programs.autorandr.enable = true;
+
   # add packages that we commonly use
   home.packages = with pkgs; [
     feh
@@ -222,17 +233,6 @@ in
     source = ./.xinitrc;
     executable = true;
   };
-
-  # add zsh configuration lines
-  programs.zsh.initExtra = builtins.readFile ./x11_hooks.zsh;
-
-  # add i3status-rust configuration
-  programs.i3status-rust = {
-    enable = true;
-  };
-
-  # enable autorandr
-  programs.autorandr.enable = true;
 
   # setup local shell scripts
   home.file."${commonParams.localBin}/feh-wrapper" = {
