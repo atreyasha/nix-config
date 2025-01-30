@@ -32,10 +32,22 @@ in
       };
       bars = [
         {
-          statusCommand = "${pkgs.i3status}/bin/i3status";
+          statusCommand = "i3status-rust";
           position = "top";
         }
       ];
+      focus = {
+        followMouse = false;
+        wrapping = "force";
+        mouseWarping = false;
+        newWindow = "none";
+      };
+      fonts = {
+        names = [ "DejaVu Sans" ];
+        size = 10.0;
+      };
+      # TODO: might require edit based on how we merge keybindings
+      defaultWorkspace = "workspace number 1";
     };
   };
 
@@ -81,4 +93,9 @@ in
     source = ./i3lock-wrapper;
     executable = true;
   };
+
+  # add necessary fonts
+  home.packages = with pkgs; [
+    dejavu_fonts
+  ];
 }
