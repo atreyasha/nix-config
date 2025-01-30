@@ -128,7 +128,7 @@ in
 
         "XF86AudioRaiseVolume" = ''exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%+"'';
         "XF86AudioLowerVolume" = ''exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%-"'';
-        "XF86AudioMute" = ''exec --no-startup-id "amixer -q sset master toggle"'';
+        "XF86AudioMute" = ''exec --no-startup-id "amixer -q sset Master toggle"'';
 
         "XF86MonBrightnessUp" = ''exec --no-startup-id "brightnessctl set +10%"'';
         "XF86MonBrightnessDown" = ''exec --no-startup-id "[ $(brightnessctl -m | cut -d , -f 4 | sed 's/%//') -gt 10 ] && brightnessctl set 10%-"'';
