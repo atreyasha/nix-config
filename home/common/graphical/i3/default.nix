@@ -270,7 +270,7 @@ in
             overrides = {
               alternating_tint_bg = "#151515";
             };
-          }
+          };
         };
       };
     };
