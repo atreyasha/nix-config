@@ -32,6 +32,7 @@ in
       };
       bars = [
         {
+          fonts = config.xsession.windowManager.i3.config.fonts;
           statusCommand = "i3status-rust";
           position = "top";
         }
