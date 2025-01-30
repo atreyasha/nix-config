@@ -201,6 +201,79 @@ in
   # add i3status-rust configuration
   programs.i3status-rust = {
     enable = true;
+    bars = {
+      default = {
+        blocks = [
+          { block = "sound"; }
+          {
+            block = "backlight";
+            invert_icons = true;
+          }
+          {
+            block = "cpu";
+            format = " $icon $utilization.eng(w:3) @ $frequency ";
+          }
+          {
+            block = "temperature";
+            idle = 50;
+          }
+          {
+            block = "memory";
+            format = " $icon $mem_used.eng(prefix:Mi)/$mem_total.eng(prefix:Mi) ($mem_used_percents.eng(w:1)) ";
+          }
+          {
+            block = "disk_space";
+            format = " $icon $available ($percentage.eng(w:1)) ";
+          }
+          {
+            block = "custom";
+            command = ''
+              """wifi | grep -q '= on' && \
+              echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || \
+              echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'"""
+            '';
+            json = true;
+            signal = 8;
+          }
+          {
+            block = "net";
+            format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
+            inactive_format = "";
+            signal = 8;
+          }
+          {
+            block = "battery";
+            format = " $icon $percentage {($time)|} ";
+            driver = "upower";
+            device = "";  # forces upower to not use DisplayDevice
+            empty_threshold = -1;  # empty battery will not be shown
+          }
+          {
+            block = "time";
+            format = " $timestamp.datetime(f:'%a %d/%m/%Y') ";
+          }
+          {
+            block = "time";
+            format = " $timestamp.datetime(f:'%R') ";
+          }
+          {
+            block = "keyboard_layout";
+            driver = "xkbswitch";
+            format = " \uf11c $layout ";
+            signal = 9;
+          }
+        ];
+        icons = "awesome4";
+        settings = {
+          theme = {
+            theme = "dracula";
+            overrides = {
+              alternating_tint_bg = "#151515";
+            };
+          }
+        };
+      };
+    };
   };
 
   # add zsh configuration lines
