@@ -142,8 +142,8 @@ in
         "${modifier}+b" = ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
 
         "${exitMode}" = "mode ${exitModeMessage}";
-        "${adjustMode}+r" = "mode ${adjustModeMessage}";
-        "${scrotMode}+Shift+s" = "mode ${scrotModeMessage}";
+        "${adjustMode}" = "mode ${adjustModeMessage}";
+        "${scrotMode}" = "mode ${scrotModeMessage}";
       };
       menu = "";
       modes = {
@@ -170,7 +170,7 @@ in
           Escape = "mode default";
           "${adjustMode}" = "mode default";
         };
-        "screen-capture: s[e]lection, foc[u]sed, [a]ll" = {
+        "${scrotModeMessage}" = {
           "--release e" = "exec --no-startup-id scrot --line style=dash --select; mode default";
           u = "exec --no-startup-id scrot -u -b; mode default";
           a = ''mode default; exec --no-startup-id "sleep 0.5 && scrot'';
