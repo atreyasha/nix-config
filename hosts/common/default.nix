@@ -65,8 +65,9 @@
   # enable network manager
   networking.networkmanager.enable = true;
 
-  # time-related settings
+  # time-related settings with avahi workaround: https://github.com/NixOS/nixpkgs/issues/329522
   services.automatic-timezoned.enable = true;
+  services.avahi.enable = true;
   services.timesyncd = {
     enable = true;
     servers = [ "time.google.com" ];
