@@ -9,7 +9,6 @@ let
   exitModeMessage = "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff";
   adjustModeMessage = "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]";
   scrotModeMessage = "screen-capture: s[e]lection, foc[u]sed, [a]ll";
-  wifiRealTimeSignal = 8;
   keyboardRealTimeSignal = 9;
 in
 {
@@ -132,10 +131,6 @@ in
         "XF86AudioLowerVolume" = ''exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%-"'';
         "XF86AudioMute" = ''exec --no-startup-id "amixer -q sset Master toggle"'';
 
-        "XF86MonBrightnessUp" = ''exec --no-startup-id "brightnessctl set +10%"'';
-        "XF86MonBrightnessDown" = ''exec --no-startup-id "[ $(brightnessctl -m | cut -d , -f 4 | sed 's/%//') -gt 10 ] && brightnessctl set 10%-"'';
-
-        "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+${builtins.toString wifiRealTimeSignal} i3status-rs"'';
         "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+${builtins.toString keyboardRealTimeSignal} i3status-rs"'';
 
         "${modifier}+q" = "exec --no-startup-id qutebrowser";
@@ -208,16 +203,8 @@ in
         blocks = [
           { block = "sound"; }
           {
-            block = "backlight";
-            invert_icons = true;
-          }
-          {
             block = "cpu";
             format = " $icon $utilization.eng(w:3) @ $frequency ";
-          }
-          {
-            block = "temperature";
-            idle = 50;
           }
           {
             block = "memory";
@@ -228,23 +215,9 @@ in
             format = " $icon $available ($percentage.eng(w:1)) ";
           }
           {
-            block = "custom";
-            command = "wifi | grep -q '= on' && echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'";
-            json = true;
-            signal = wifiRealTimeSignal;
-          }
-          {
             block = "net";
             format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
             inactive_format = "";
-            signal = wifiRealTimeSignal;
-          }
-          {
-            block = "battery";
-            format = " $icon $percentage {($time)|} ";
-            driver = "upower";
-            device = "";  # forces upower to not use DisplayDevice
-            empty_threshold = -1;  # empty battery will not be shown
           }
           {
             block = "time";
