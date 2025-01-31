@@ -87,10 +87,10 @@ in
   };
 
   # configure autorandr manually
-  xdg.configFile."autorandr.single.config".source = ./autorandr/single/config;
-  xdg.configFile."autorandr.single.setup".source = ./autorandr/single/setup;
-  xdg.configFile."autorandr.dual.config".source = ./autorandr/dual/config;
-  xdg.configFile."autorandr.dual.setup".source = ./autorandr/dual/setup;
+  xdg.configFile."autorandr/single/config".source = ./autorandr/single/config;
+  xdg.configFile."autorandr/single/setup".source = ./autorandr/single/setup;
+  xdg.configFile."autorandr/dual/config".source = ./autorandr/dual/config;
+  xdg.configFile."autorandr/dual/setup".source = ./autorandr/dual/setup;
 
   # set up standard picom
   home.packages = with pkgs; [ picom ];
