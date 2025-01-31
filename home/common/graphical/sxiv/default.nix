@@ -26,4 +26,10 @@
       '';
     executable = true;
   };
+
+  # configure XDG for sxiv
+  xdg.mimeApps.defaultApplications = {
+    "image/jpeg" = [ "sxiv.desktop" ];
+    "image/png" = [ "sxiv.desktop" ];
+  };
 }
