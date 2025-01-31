@@ -231,13 +231,13 @@ in
             block = "custom";
             command = "wifi | grep -q '= on' && echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'";
             json = true;
-            signal = wifiRealTimeSignal;
+            signal = "${wifiRealTimeSignal}";
           }
           {
             block = "net";
             format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
             inactive_format = "";
-            signal = wifiRealTimeSignal;
+            signal = "${wifiRealTimeSignal}";
           }
           {
             block = "battery";
@@ -258,7 +258,7 @@ in
             block = "keyboard_layout";
             driver = "xkbswitch";
             format = builtins.fromJSON ''" \uf11c $layout "'';  # see workaround: https://github.com/NixOS/nix/issues/10082
-            signal = keyboardRealTimeSignal;
+            signal = "${keyboardRealTimeSignal}";
           }
         ];
         icons = "awesome4";
