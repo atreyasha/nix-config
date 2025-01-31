@@ -294,6 +294,7 @@ in
     i3-balance-workspace
     dejavu_fonts
     font-awesome_4
+    jq
   ];
 
   # set up desktop backgrounds
