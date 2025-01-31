@@ -12,7 +12,7 @@ in
 {
   # make additional configurations for i3
   xsession.windowManager.i3.config = {
-    keybindings = lib.mkAfter {
+    keybindings = {
         "XF86MonBrightnessUp" = ''exec --no-startup-id "brightnessctl set +10%"'';
         "XF86MonBrightnessDown" = ''exec --no-startup-id "[ $(brightnessctl -m | cut -d , -f 4 | sed 's/%//') -gt 10 ] && brightnessctl set 10%-"'';
         "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+${builtins.toString wifiRealTimeSignal} i3status-rs"'';
