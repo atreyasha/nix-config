@@ -21,9 +21,6 @@
     };
   };
 
-  # enable docker
-  virtualisation.docker.enable = true;
-
   # update system packages
   environment.systemPackages = with pkgs; [ brightnessctl ];
 

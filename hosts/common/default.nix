@@ -92,6 +92,9 @@
     };
   };
 
+  # enable docker
+  virtualisation.docker.enable = true;
+
   # enable alsa support for pipewirew
   services.pipewire = {
     enable = true;
