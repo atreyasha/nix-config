@@ -86,6 +86,18 @@ in
     };
   };
 
+  # configure autorandr manually
+  xdg.configFile."autorandr" = {
+      single = {
+        config = builtins.readFile ./autorandr/single/config;
+        setup = builtins.readFile ./autorandr/single/setup;
+      };
+      dual = {
+        config = builtins.readFile ./autorandr/dual/config;
+        setup = builtins.readFile ./autorandr/dual/setup;
+      };
+   };
+
   # set up standard picom
   home.packages = with pkgs; [ picom ];
   xdg.configFile."picom/picom.conf".source = ./picom.conf;
