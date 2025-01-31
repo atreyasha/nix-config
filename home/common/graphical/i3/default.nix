@@ -9,8 +9,8 @@ let
   exitModeMessage = "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff";
   adjustModeMessage = "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]";
   scrotModeMessage = "screen-capture: s[e]lection, foc[u]sed, [a]ll";
-  wifiRealTimeSignal = 8;
-  keyboardRealTimeSignal = 9;
+  wifiRealTimeSignal = "8";
+  keyboardRealTimeSignal = "9";
 in
 {
   # standard i3 configuration
