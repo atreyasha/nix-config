@@ -1,9 +1,5 @@
 { lib, config, pkgs, commonParams, ... }:
 
-# TODO: ensure becks and monix work for now
-# TODO: move brightnessctl program to monix only
-# TODO: delete brightnessctl from common
-
 let
   modifier = config.xsession.windowManager.i3.config.modifier;
   wifiRealTimeSignal = 8;

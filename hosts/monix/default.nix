@@ -24,6 +24,16 @@
   # enable docker
   virtualisation.docker.enable = true;
 
+  # update system packages
+  environment.systemPackages = with pkgs; [ brightnessctl ];
+
+  # update default user groups
+  users = {
+    users."${commonParams.defaultUser}" = {
+      extraGroups = [ "video" ];
+    };
+  };
+
   # here we declare our home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs outputs commonParams; };

@@ -88,7 +88,7 @@
     users."${commonParams.defaultUser}" = {
       initialPassword = "password";
       isNormalUser = true;
-      extraGroups = [ "wheel" "video" "docker" ];
+      extraGroups = [ "wheel" "docker" ];
     };
   };
 
@@ -102,7 +102,7 @@
   # install system-level packages
   environment = {
     pathsToLink = [ "/share/zsh" ];
-    systemPackages = with pkgs; [ vim git brightnessctl alsa-utils ];
+    systemPackages = with pkgs; [ vim git alsa-utils ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
