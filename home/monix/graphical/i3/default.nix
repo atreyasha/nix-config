@@ -1,5 +1,6 @@
-{ lib, pkgs, commonParams, ... }:
+{ lib, config, pkgs, commonParams, ... }:
 
+# TODO: ensure becks and monix work for now
 # TODO: move brightnessctl program to monix only
 # TODO: delete brightnessctl from common
 
