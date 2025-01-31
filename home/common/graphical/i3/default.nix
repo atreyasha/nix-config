@@ -9,6 +9,8 @@ let
   exitModeMessage = "exit: [s]uspend, ab[o]rt-X, [l]ock, [r]eboot, [p]oweroff";
   adjustModeMessage = "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]";
   scrotModeMessage = "screen-capture: s[e]lection, foc[u]sed, [a]ll";
+  wifiRealTimeSignal = 8;
+  keyboardRealTimeSignal = 9;
 in
 {
   # standard i3 configuration
@@ -133,8 +135,8 @@ in
         "XF86MonBrightnessUp" = ''exec --no-startup-id "brightnessctl set +10%"'';
         "XF86MonBrightnessDown" = ''exec --no-startup-id "[ $(brightnessctl -m | cut -d , -f 4 | sed 's/%//') -gt 10 ] && brightnessctl set 10%-"'';
 
-        "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+8 i3status-rs"'';
-        "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+9 i3status-rs"'';
+        "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+${wifiRealTimeSignal} i3status-rs"'';
+        "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+${keyboardRealTimeSignal} i3status-rs"'';
 
         "${modifier}+q" = "exec --no-startup-id qutebrowser";
         "${modifier}+Shift+m" = ''exec --no-startup-id "autorandr --change && feh-wrapper"'';
@@ -229,13 +231,13 @@ in
             block = "custom";
             command = "wifi | grep -q '= on' && echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'";
             json = true;
-            signal = 8;
+            signal = ${wifiRealTimeSignal};
           }
           {
             block = "net";
             format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
             inactive_format = "";
-            signal = 8;
+            signal = ${wifiRealTimeSignal};
           }
           {
             block = "battery";
@@ -256,7 +258,7 @@ in
             block = "keyboard_layout";
             driver = "xkbswitch";
             format = builtins.fromJSON ''" \uf11c $layout "'';  # see workaround: https://github.com/NixOS/nix/issues/10082
-            signal = 9;
+            signal = ${keyboardRealTimeSignal};
           }
         ];
         icons = "awesome4";
