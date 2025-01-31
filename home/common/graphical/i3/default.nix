@@ -227,11 +227,7 @@ in
           }
           {
             block = "custom";
-            command = ''
-              """wifi | grep -q '= on' && \
-              echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || \
-              echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'"""
-            '';
+            command = "wifi | grep -q '= on' && echo '{\"icon\": \"net_wireless\", \"state\": \"Info\", \"text\": \"enabled\"}' || echo '{\"icon\": \"net_wireless\", \"text\": \"disabled\"}'";
             json = true;
             signal = 8;
           }
