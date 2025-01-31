@@ -133,8 +133,8 @@ in
         "XF86MonBrightnessUp" = ''exec --no-startup-id "brightnessctl set +10%"'';
         "XF86MonBrightnessDown" = ''exec --no-startup-id "[ $(brightnessctl -m | cut -d , -f 4 | sed 's/%//') -gt 10 ] && brightnessctl set 10%-"'';
 
-        "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+8 -x i3status-rs"'';
-        "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+9 -x i3status-rs"'';
+        "${modifier}+Shift+w" = ''exec --no-startup-id "wifi toggle && pkill -SIGRTMIN+8 i3status-rs"'';
+        "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+9 i3status-rs"'';
 
         "${modifier}+q" = "exec --no-startup-id qutebrowser";
         "${modifier}+Shift+m" = ''exec --no-startup-id "autorandr --change && feh-wrapper"'';
