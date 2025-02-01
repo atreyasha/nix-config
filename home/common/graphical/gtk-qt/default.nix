@@ -28,5 +28,5 @@
   };
 
   # packages to inspect configuration
-  home.packages = with pkgs; [ lxappearance libsForQt5.qt5ct ];
+  home.packages = with pkgs; [ lxappearance ];
 }
