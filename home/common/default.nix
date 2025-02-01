@@ -23,7 +23,7 @@
   home = {
     username = "${commonParams.defaultUser}";
     homeDirectory = "/home/${commonParams.defaultUser}";
-    packages = with pkgs; [ python3Full ];
+    packages = with pkgs; [ python3Full arandr ];
     sessionPath = [
       "$HOME/${commonParams.localBin}"
     ];
