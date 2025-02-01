@@ -7,15 +7,15 @@
     font = {
       name = "Canterell";
       size = 11;
-      pkg = pkgs.cantarell-fonts;
+      package = pkgs.cantarell-fonts;
     };
     iconTheme = {
       name = "Arc";
-      pkg = pkgs.arc-icon-theme;
+      package = pkgs.arc-icon-theme;
     };
     theme = {
       name = "Adwaita-dark";
-      pkg = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome.gnome-themes-extra;
     };
   };
 
