@@ -92,6 +92,9 @@
     };
   };
 
+  # enable to suppress build errors: https://github.com/nix-community/home-manager/issues/3113
+  programs.dconf.enable = true;
+
   # enable docker
   virtualisation.docker.enable = true;
 
