@@ -16,32 +16,29 @@
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
+  outputs = { self, nixpkgs, ... }@inputs:
+    let
+      inherit (self) outputs;
 
-    # define common parameters
-    commonParams = {
-      defaultUser = "shankar";
-      localBin = ".local/bin";
-    };
-  in {
-    # NixOS configuration entrypoint
-    nixosConfigurations = {
-      # personal laptop
-      monix = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs commonParams; };
-        modules = [ ./hosts/monix ];
+      # define common parameters
+      commonParams = {
+        defaultUser = "shankar";
+        localBin = ".local/bin";
       };
+    in {
+      # NixOS configuration entrypoint
+      nixosConfigurations = {
+        # personal laptop
+        monix = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs commonParams; };
+          modules = [ ./hosts/monix ];
+        };
 
-      # VMWare emulating personal laptop
-      becks = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs commonParams; };
-        modules = [ ./hosts/becks ];
+        # VMWare emulating personal laptop
+        becks = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs commonParams; };
+          modules = [ ./hosts/becks ];
+        };
       };
     };
-  };
 }

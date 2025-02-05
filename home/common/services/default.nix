@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./systemd
-  ];
-}
+{ imports = [ ./systemd ]; }

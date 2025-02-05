@@ -1,6 +1,1 @@
-{
-  imports = [
-    ../common
-    ./graphical
-  ];
-}
+{ imports = [ ../common ./graphical ]; }

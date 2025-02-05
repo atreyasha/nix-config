@@ -22,11 +22,13 @@
   qt = {
     enable = true;
     platformTheme.name = "gtk";
-    style = {
-      name = "adwaita-dark";
-    };
+    style = { name = "adwaita-dark"; };
   };
 
   # packages to inspect configuration
-  home.packages = with pkgs; [ lxappearance libsForQt5.qt5ct qt6Packages.qt6ct ];
+  home.packages = with pkgs; [
+    lxappearance
+    libsForQt5.qt5ct
+    qt6Packages.qt6ct
+  ];
 }

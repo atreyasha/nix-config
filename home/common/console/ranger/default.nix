@@ -4,15 +4,11 @@
   # core program
   programs.ranger = {
     enable = true;
-    extraPackages = with pkgs; [
-      ueberzugpp
-    ];
-    plugins = [
-      {
-        name = "ranger_devicons";
-        src = inputs.ranger-devicons;
-      }
-    ];
+    extraPackages = with pkgs; [ ueberzugpp ];
+    plugins = [{
+      name = "ranger_devicons";
+      src = inputs.ranger-devicons;
+    }];
     extraConfig = ''
       set preview_images true
       set preview_images_method ueberzug

@@ -23,7 +23,7 @@
       tags=''${tags%,}
 
       echo "''${filesize}''${s}''${geometry}''${tags:+$s}''${tags}''${s}''${filename}"
-      '';
+    '';
     executable = true;
   };
 

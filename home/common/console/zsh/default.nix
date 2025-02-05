@@ -47,11 +47,9 @@
         clear
       fi
     '';
-    plugins = [
-      {
-        name = "zsh-system-clipboard";
-        src = inputs.zsh-system-clipboard;
-      }
-    ];
+    plugins = [{
+      name = "zsh-system-clipboard";
+      src = inputs.zsh-system-clipboard;
+    }];
   };
 }

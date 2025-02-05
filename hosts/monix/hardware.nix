@@ -1,1 +1,3 @@
-# TODO: complete this file after installing on bare metal
+{
+  # TODO: complete this file after installing on bare metal
+}

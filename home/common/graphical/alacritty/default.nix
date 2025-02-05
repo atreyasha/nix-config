@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
-let
-  alacrittyFont = "BitstromWera Nerd Font Mono";
-in
-{
+let alacrittyFont = "BitstromWera Nerd Font Mono";
+in {
   # core program
   programs.alacritty = {
     enable = true;
@@ -13,13 +11,9 @@ in
         foreground = "#dcdccc";
       };
 
-      window = {
-        opacity = 0.97;
-      };
+      window = { opacity = 0.97; };
 
-      env = {
-        WINIT_X11_SCALE_FACTOR = "1.0";
-      };
+      env = { WINIT_X11_SCALE_FACTOR = "1.0"; };
 
       font = {
         size = 12.0;
@@ -71,12 +65,9 @@ in
   };
 
   # update session variable
-  home.sessionVariables = {
-    TERMINAL = "alacritty";
-  };
+  home.sessionVariables = { TERMINAL = "alacritty"; };
 
   # add necessary fonts
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "BitstreamVeraSansMono" ]; })
-  ];
+  home.packages = with pkgs;
+    [ (nerdfonts.override { fonts = [ "BitstreamVeraSansMono" ]; }) ];
 }

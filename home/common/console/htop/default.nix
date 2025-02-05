@@ -1,8 +1,6 @@
 {
   programs.htop = {
     enable = true;
-    settings = {
-      sort_key = 46;
-    };
+    settings = { sort_key = 46; };
   };
 }

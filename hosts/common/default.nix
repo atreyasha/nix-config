@@ -1,21 +1,14 @@
-{ inputs, outputs, lib, config, pkgs, commonParams, ...}:
+{ inputs, outputs, lib, config, pkgs, commonParams, ... }:
 
 {
   # import necessary additional files
-  imports = [
-    inputs.home-manager.nixosModules.home-manager
-  ];
+  imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   # configure our nixpkgs
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs = { config = { allowUnfree = true; }; };
 
   # configure flakes
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
   in {
     settings = {
       # we need this to enable flakes
@@ -35,7 +28,7 @@
     channel.enable = false;
 
     # opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
 
     # define garbage collection

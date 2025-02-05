@@ -10,8 +10,7 @@ let
   adjustModeMessage = "adjust size/gaps: j,k,l,h [size] | J,K,L,H [gaps]";
   scrotModeMessage = "screen-capture: s[e]lection, foc[u]sed, [a]ll";
   keyboardRealTimeSignal = 9;
-in
-{
+in {
   # standard i3 configuration
   xsession.windowManager.i3 = {
     enable = true;
@@ -23,28 +22,20 @@ in
           { class = "^Firefox$"; }
           { class = "^qutebrowser$"; }
         ];
-        "$ws3" = [
-          { class = "^emacs$"; }
-          { class = "^Emacs$"; }
-        ];
+        "$ws3" = [ { class = "^emacs$"; } { class = "^Emacs$"; } ];
         "$ws4" = [
           { class = "^signal$"; }
           { class = "^Signal$"; }
           { class = "^zoom$"; }
           { class = "^Zoom$"; }
         ];
-        "$ws5" = [
-          { class = "^vmware$"; }
-          { class = "^Vmware$"; }
-        ];
+        "$ws5" = [ { class = "^vmware$"; } { class = "^Vmware$"; } ];
       };
-      bars = [
-        {
-          fonts = config.xsession.windowManager.i3.config.fonts;
-          statusCommand = "i3status-rs config-default.toml";
-          position = "top";
-        }
-      ];
+      bars = [{
+        fonts = config.xsession.windowManager.i3.config.fonts;
+        statusCommand = "i3status-rs config-default.toml";
+        position = "top";
+      }];
       focus = {
         followMouse = false;
         wrapping = "force";
@@ -62,9 +53,11 @@ in
         smartGaps = true;
       };
       keybindings = {
-        "${modifier}+Return" = ''exec --no-startup-id "i3-sensible-terminal --working-directory ~"'';
+        "${modifier}+Return" =
+          ''exec --no-startup-id "i3-sensible-terminal --working-directory ~"'';
         "${modifier}+Shift+q" = "kill";
-        "${modifier}+d" = ''exec --no-startup-id "i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output' | xargs -I{} rofi -monitor {} -show drun"'';
+        "${modifier}+d" = ''
+          exec --no-startup-id "i3-msg -t get_workspaces | jq '.[] | select(.focused==true).output' | xargs -I{} rofi -monitor {} -show drun"'';
 
         "${modifier}+Left" = "focus left";
         "${modifier}+Down" = "focus down";
@@ -101,42 +94,40 @@ in
         "${modifier}+9" = "workspace number $ws9";
         "${modifier}+0" = "workspace number $ws10";
 
-        "${modifier}+Shift+1" =
-          "move container to workspace number $ws1";
-        "${modifier}+Shift+2" =
-          "move container to workspace number $ws2";
-        "${modifier}+Shift+3" =
-          "move container to workspace number $ws3";
-        "${modifier}+Shift+4" =
-          "move container to workspace number $ws4";
-        "${modifier}+Shift+5" =
-          "move container to workspace number $ws5";
-        "${modifier}+Shift+6" =
-          "move container to workspace number $ws6";
-        "${modifier}+Shift+7" =
-          "move container to workspace number $ws7";
-        "${modifier}+Shift+8" =
-          "move container to workspace number $ws8";
-        "${modifier}+Shift+9" =
-          "move container to workspace number $ws9";
-        "${modifier}+Shift+0" =
-          "move container to workspace number $ws10";
+        "${modifier}+Shift+1" = "move container to workspace number $ws1";
+        "${modifier}+Shift+2" = "move container to workspace number $ws2";
+        "${modifier}+Shift+3" = "move container to workspace number $ws3";
+        "${modifier}+Shift+4" = "move container to workspace number $ws4";
+        "${modifier}+Shift+5" = "move container to workspace number $ws5";
+        "${modifier}+Shift+6" = "move container to workspace number $ws6";
+        "${modifier}+Shift+7" = "move container to workspace number $ws7";
+        "${modifier}+Shift+8" = "move container to workspace number $ws8";
+        "${modifier}+Shift+9" = "move container to workspace number $ws9";
+        "${modifier}+Shift+0" = "move container to workspace number $ws10";
         "${modifier}+m" = "move workspace to output left";
         "${modifier}+n" = "move workspace to output right";
 
         "${modifier}+Shift+c" = "reload";
         "${modifier}+Shift+r" = "restart";
 
-        "XF86AudioRaiseVolume" = ''exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%+"'';
-        "XF86AudioLowerVolume" = ''exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%-"'';
-        "XF86AudioMute" = ''exec --no-startup-id "amixer -q sset Master toggle"'';
+        "XF86AudioRaiseVolume" = ''
+          exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%+"'';
+        "XF86AudioLowerVolume" = ''
+          exec --no-startup-id "amixer -q sset Master unmute && amixer -q sset Master 5%-"'';
+        "XF86AudioMute" =
+          ''exec --no-startup-id "amixer -q sset Master toggle"'';
 
-        "${modifier}+Shift+k" = ''exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+${builtins.toString keyboardRealTimeSignal} i3status-rs"'';
+        "${modifier}+Shift+k" = ''
+          exec --no-startup-id "xkb-switch -n && pkill -SIGRTMIN+${
+            builtins.toString keyboardRealTimeSignal
+          } i3status-rs"'';
 
         "${modifier}+q" = "exec --no-startup-id qutebrowser";
-        "${modifier}+Shift+m" = ''exec --no-startup-id "autorandr --change && feh-wrapper"'';
+        "${modifier}+Shift+m" =
+          ''exec --no-startup-id "autorandr --change && feh-wrapper"'';
         "${modifier}+Shift+b" = "exec --no-startup-id i3_balance_workspace";
-        "${modifier}+b" = ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
+        "${modifier}+b" =
+          ''exec --no-startup-id "i3_balance_workspace --scope focus"'';
 
         "${exitMode}" = ''mode "${exitModeMessage}"'';
         "${adjustMode}" = ''mode "${adjustModeMessage}"'';
@@ -168,7 +159,8 @@ in
           "${adjustMode}" = "mode default";
         };
         "${scrotModeMessage}" = {
-          "--release e" = "exec --no-startup-id scrot --line style=dash --select; mode default";
+          "--release e" =
+            "exec --no-startup-id scrot --line style=dash --select; mode default";
           u = "exec --no-startup-id scrot -u -b; mode default";
           a = ''mode default; exec --no-startup-id "sleep 0.5 && scrot"'';
           Return = "mode default";
@@ -179,7 +171,8 @@ in
       modifier = "Mod4";
       startup = [
         {
-          command = "i3-msg workspace $ws1; { i3-sensible-terminal --working-directory ~ & }; { i3-sensible-terminal --working-directory ~ & }";
+          command =
+            "i3-msg workspace $ws1; { i3-sensible-terminal --working-directory ~ & }; { i3-sensible-terminal --working-directory ~ & }";
           notification = false;
         }
         {
@@ -208,7 +201,8 @@ in
           }
           {
             block = "memory";
-            format = " $icon $mem_used.eng(prefix:Mi)/$mem_total.eng(prefix:Mi) ($mem_used_percents.eng(w:1)) ";
+            format =
+              " $icon $mem_used.eng(prefix:Mi)/$mem_total.eng(prefix:Mi) ($mem_used_percents.eng(w:1)) ";
           }
           {
             block = "disk_space";
@@ -216,7 +210,8 @@ in
           }
           {
             block = "net";
-            format = " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
+            format =
+              " $icon ^icon_net_down$speed_down.eng(prefix:K) ^icon_net_up$speed_up.eng(prefix:K) ";
             inactive_format = "";
           }
           {
@@ -230,7 +225,8 @@ in
           {
             block = "keyboard_layout";
             driver = "xkbswitch";
-            format = builtins.fromJSON ''" \uf11c $layout "'';  # see workaround: https://github.com/NixOS/nix/issues/10082
+            format = builtins.fromJSON ''
+              " \uf11c $layout "''; # see workaround: https://github.com/NixOS/nix/issues/10082
             signal = keyboardRealTimeSignal;
           }
         ];
@@ -238,9 +234,7 @@ in
         settings = {
           theme = {
             theme = "dracula";
-            overrides = {
-              alternating_tint_bg = "#151515";
-            };
+            overrides = { alternating_tint_bg = "#151515"; };
           };
         };
       };

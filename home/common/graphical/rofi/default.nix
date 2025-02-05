@@ -13,17 +13,14 @@
       line-padding = 1;
       separator-style = "none";
     };
-    theme = let
-      inherit (config.lib.formats.rasi) mkLiteral;
+    theme = let inherit (config.lib.formats.rasi) mkLiteral;
     in {
       "@theme" = "gruvbox-dark-hard";
       listview = {
         lines = 20;
         columns = 9;
       };
-      window = {
-        width = mkLiteral "100%";
-      };
+      window = { width = mkLiteral "100%"; };
     };
   };
 }

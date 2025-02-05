@@ -2,11 +2,7 @@
 
 {
   # modular imports
-  imports = [
-    ./console
-    ./graphical
-    ./services
-  ];
+  imports = [ ./console ./graphical ./services ];
 
   # configure nixpkgs as necessary
   nixpkgs = {
@@ -24,9 +20,7 @@
     username = "${commonParams.defaultUser}";
     homeDirectory = "/home/${commonParams.defaultUser}";
     packages = with pkgs; [ python3Full arandr ];
-    sessionPath = [
-      "$HOME/${commonParams.localBin}"
-    ];
+    sessionPath = [ "$HOME/${commonParams.localBin}" ];
   };
 
   # configure home-manager
