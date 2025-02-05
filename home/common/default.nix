@@ -36,6 +36,18 @@
     mimeApps.enable = true;
   };
 
+  # add helper script to update system
+  home.file."${commonParams.localBin}/pull-and-switch" = {
+    text = ''
+      #!/usr/bin/env bash
+      set -e
+
+      sudo git -C ${commonParams.localNixos} pull
+      sudo nixos-rebuild switch --flake ${commonParams.localNixos}
+    '';
+    executable = true;
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 }

@@ -24,6 +24,7 @@
       commonParams = {
         defaultUser = "shankar";
         localBin = ".local/bin";
+        localNixos = "/etc/nix-config";
       };
     in {
       # NixOS configuration entrypoint
