@@ -58,7 +58,25 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "ranger-devicons": "ranger-devicons",
+        "spacemacs": "spacemacs",
         "zsh-system-clipboard": "zsh-system-clipboard"
+      }
+    },
+    "spacemacs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738733518,
+        "narHash": "sha256-Aql3Qj5BAvnGT0Pb96UsvMWXTpcCRLBU86n690kKcLg=",
+        "owner": "syl20bnr",
+        "repo": "spacemacs",
+        "rev": "5dfed5981644fe56f95235ac2f0b7ea026148a72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "syl20bnr",
+        "ref": "develop",
+        "repo": "spacemacs",
+        "type": "github"
       }
     },
     "zsh-system-clipboard": {
