@@ -1,4 +1,14 @@
 {
-  imports =
-    [ ./dircolors ./git ./gpg ./htop ./ranger ./readline ./tmux ./vim ./zsh ];
+  imports = [
+    ./dircolors
+    ./emacs
+    ./git
+    ./gpg
+    ./htop
+    ./ranger
+    ./readline
+    ./tmux
+    ./vim
+    ./zsh
+  ];
 }

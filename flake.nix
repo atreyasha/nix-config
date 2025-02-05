@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    spacemacs = {
+      url = "github:syl20bnr/spacemacs/develop";
+      flake = false;
+    };
     ranger-devicons = {
       url = "github:alexanderjeurissen/ranger_devicons";
       flake = false;
