@@ -48,7 +48,7 @@ Follow the [NixOS Manual](https://nixos.org/manual/nixos/stable/#sec-installatio
     # nixos-install --flake /mnt/etc/nix-config#<host>
     ```
 
-4. Update the `root` and default user's password.
+4. Update the `root` and default user's password. You can also import secrets now.
 
 ## Maintenance :construction_worker:
 
