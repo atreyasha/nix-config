@@ -14,7 +14,7 @@ Configuration includes support for:
 - [`alacritty`](https://github.com/alacritty/alacritty)
 - [`i3-gaps`](https://github.com/Airblader/i3) + [`i3lock-fancy-rapid`](https://github.com/yvbbrjdr/i3lock-fancy-rapid)
 - [`picom`](https://github.com/yshui/picom/)
-- [`qutebrowser`](https://github.com/qutebrowser/qutebrowser/issues/700)
+- [`qutebrowser`](https://github.com/qutebrowser/qutebrowser)
 - [`ranger`](https://github.com/ranger/ranger)
 - [`rofi`](https://github.com/davatorium/rofi)
 - [`spacemacs`](https://github.com/syl20bnr/spacemacs)
