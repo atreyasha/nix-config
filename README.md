@@ -26,7 +26,7 @@ Configuration includes support for:
 
 ### Partitioning & formatting
 
-Follow the [NixOS Manual](https://nixos.org/manual/nixos/stable/#sec-installation-manual-summary) to encrypt, partition and format your filesystem. Return to this readme after mounting partitions.
+Follow the [NixOS Manual](https://nixos.org/manual/nixos/stable/#sec-installation-manual-summary) to encrypt, partition and format your filesystem. Return to this readme after mounting partitions in the target filesystem (i.e. `/mnt/*`).
 
 ### Flakes
 
