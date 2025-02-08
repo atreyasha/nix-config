@@ -52,10 +52,18 @@ Follow the [NixOS Manual](https://nixos.org/manual/nixos/stable/#sec-installatio
 
 ## Maintenance :construction_worker:
 
-After installing NixOS, make changes to this repository. To sync changes on your system, execute the following as the default user:
+After installing NixOS, make changes to this repository as required. To sync changes on the system, execute the following as the default user:
 
 ```
 $ pull-and-switch
+```
+
+## Development :fire:
+
+Install [`nixfmt`](https://github.com/NixOS/nixfmt) in your system. Initialize `pre-commit` hook for automatic formatting checks of Nix files:
+
+```
+$ pre-commit install
 ```
 
 ## Credits :stars:
