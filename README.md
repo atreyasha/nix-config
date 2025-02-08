@@ -60,7 +60,7 @@ $ pull-and-switch
 
 ## Development :fire:
 
-Install [`nixfmt`](https://github.com/NixOS/nixfmt) in your system, then initialize `pre-commit` hook for automatic formatting checks of Nix files:
+Install [`nixfmt`](https://github.com/NixOS/nixfmt) in your system, then initialize `pre-commit` hook for automatic checks of Nix files:
 
 ```
 $ pre-commit install
