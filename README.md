@@ -1,6 +1,6 @@
 # nix-config
 
-This repository documents my personal NixOS configuration.
+This repository documents my personal NixOS configurations using [Nix Flakes](https://nixos.wiki/wiki/Flakes).
 
 ## Hosts :heart:
 
@@ -42,7 +42,7 @@ Follow the [NixOS Manual](https://nixos.org/manual/nixos/stable/#sec-installatio
     # nixos-generate-config --show-hardware-config
     ```
 
-3. Install this configuration, which implicitly utilizes [Nix Flakes](https://nixos.wiki/wiki/Flakes):
+3. Install this configuration:
 
     ```
     # nixos-install --flake /mnt/etc/nix-config#<host>
