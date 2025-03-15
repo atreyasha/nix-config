@@ -194,7 +194,10 @@ in {
     bars = {
       default = {
         blocks = [
-          { block = "sound"; }
+          {
+            block = "sound";
+            step_width = 0;
+          }
           {
             block = "cpu";
             format = " $icon $utilization.eng(w:3) @ $frequency ";

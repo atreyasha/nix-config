@@ -28,10 +28,15 @@ in {
     bars = {
       default = {
         blocks = lib.mkForce [
-          { block = "sound"; }
+          {
+            block = "sound";
+            step_width = 0;
+          }
           {
             block = "backlight";
             invert_icons = true;
+            cycle = [];
+            step_width = 0;
           }
           {
             block = "cpu";
